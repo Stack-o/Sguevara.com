@@ -1,0 +1,28 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# Sergio Guevara
+
+> {{ site.descripcion }}
+
+Sergio Guevara Guitán piensa sobre sistemas, complejidad, tiempo y ser, y lo aplica en organizaciones, equipos y coaching ejecutivo. Tanmayo es su práctica: ABCs para re-pensar y distinguir el "sentido común", más allá del agilismo y la PMO tradicionales. Más de 20 años en gestión de proyectos, gestión de producto, complejidad y experiencia global. Enseña sobre agilidad, cultura y complejidad.
+
+Cómo trabaja: (1) crear distinciones, (2) leer el sistema, (3) diseñar colaboración.
+
+Raíces de su pensamiento: Heidegger, Merleau-Ponty, Varela, Maturana, Evan Thompson, Ricoeur, Bergson, François Jullien (transformaciones silenciosas, propensión) y Safranski (el tiempo).
+
+Idioma del sitio: español.
+
+## Cuaderno (notas y ensayos)
+{% for nota in collections.cuaderno | reverse %}
+- [{{ nota.data.title }}]({{ site.url }}{{ nota.url }}): {{ nota.data.tipo }} sobre {{ nota.data.tema }}. {{ nota.data.extracto }}
+{%- endfor %}
+
+## Libro
+- [El Pequeño Libro del Compás Anímico]({{ site.url }}/compas-animico/): 20 principios para navegar las experiencias con un compás propio (2025).
+
+## Opcional
+- [Todo el contenido en texto]({{ site.url }}/llms-full.txt)
+- [Feed]({{ site.url }}/feed.xml)
+- [LinkedIn]({{ site.linkedin }})

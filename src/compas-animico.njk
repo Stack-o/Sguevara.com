@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: El Pequeño Libro del Compás Anímico
+permalink: /compas-animico/
+claseCuerpo: tierra
+descripcion: Veinte principios para navegar tus experiencias con un compás propio. Un libro de Sergio Guevara.
+---
+<section class="compas-hero envoltura">
+  <div class="compas-hero-texto">
+    <p class="etiqueta">Libro · 2025 · 20 principios</p>
+    <h1>El Pequeño Libro del Compás Anímico</h1>
+    <p class="grande cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
+    <p>Cada frase de este libro es una semilla. Algunas están listas para germinar ahora. Otras, cuando el terreno esté listo. Aunque tiene números, no hay un orden específico: solo la dirección que tu compás elija.</p>
+    {% if site.libroEnlace %}<a class="boton boton-oscuro" href="{{ site.libroEnlace }}">Conseguir el libro</a>{% endif %}
+  </div>
+  <img class="compas-hero-img" src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048">
+</section>
+
+<section class="envoltura principios-seccion" aria-labelledby="principios-t">
+  <h2 id="principios-t" class="etiqueta">Déjate guiar por el título que más resuene contigo</h2>
+  <ol class="principios">
+    {% for p in principios %}
+    <li class="principio">
+      {% if p.nota %}<a href="{{ p.nota }}">{% endif %}
+        <span class="principio-n">{{ p.n }}</span>
+        <span class="principio-titulo">{{ p.titulo }}</span>
+        <span class="principio-frase">{{ p.frase }}</span>
+        {% if p.nota %}<span class="principio-leer">Leer nota →</span>{% endif %}
+      {% if p.nota %}</a>{% endif %}
+    </li>
+    {% endfor %}
+    <li class="principio principio-21">
+      <span class="principio-n">21</span>
+      <span class="principio-titulo">El tuyo</span>
+      <span class="principio-frase">Tú ya tienes tu compás. Solo necesitas escucharlo y nombrarlo.</span>
+    </li>
+  </ol>
+</section>

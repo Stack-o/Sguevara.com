@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% set tituloPagina = (title + " — " + site.titulo) if title else (site.titulo + " — Cuaderno") %}
+  <title>{{ tituloPagina }}</title>
+  <meta name="description" content="{{ extracto or descripcion or site.descripcion }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ tituloPagina }}">
+  <meta property="og:description" content="{{ extracto or descripcion or site.descripcion }}">
+  <meta property="og:type" content="{{ 'article' if tipo else 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/compas-portada.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="Cuaderno — Sergio Guevara" href="/feed.xml">
+  <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="{{ claseCuerpo }}">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera envoltura">
+    <a class="logo" href="/" aria-label="Sergio Guevara — inicio">
+      {% set claseMarca = "marca-nav" %}{% include "marca.njk" %}
+      <span>Sergio Guevara</span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="/cuaderno/"{% if page.url.startsWith('/cuaderno') %} aria-current="page"{% endif %}>[ Cuaderno ]</a>
+      <a href="/#tanmayo">[ Tanmayo ]</a>
+      <a href="/compas-animico/"{% if page.url == '/compas-animico/' %} aria-current="page"{% endif %}>[ Compás Anímico ]</a>
+      <a href="/#sobre">[ Sobre mí ]</a>
+    </nav>
+    <a class="enlace-mono" href="/#conversemos">Conversemos ↗</a>
+  </header>
+
+  <main id="contenido">
+    {{ content | safe }}
+  </main>
+
+  <footer class="pie envoltura" id="conversemos">
+    <div class="pie-grande">
+      {% set claseMarca = "marca-pie" %}{% include "marca.njk" %}
+      <a class="conversemos" href="{{ site.linkedin }}">Conversemos <span class="c-sistemas">↗</span></a>
+    </div>
+    <div class="pie-linea">
+      <span>{{ site.autor }} · sguevara.com</span>
+      <span>
+        {% if site.correo %}<a href="mailto:{{ site.correo }}">{{ site.correo }}</a> · {% endif %}
+        <a href="{{ site.linkedin }}">LinkedIn</a> · <a href="/feed.xml">RSS</a> · <a href="/llms.txt">llms.txt</a>
+      </span>
+    </div>
+  </footer>
+  <script src="/assets/js/sitio.js" defer></script>
+</body>
+</html>

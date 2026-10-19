@@ -1,0 +1,104 @@
+---
+layout: base.njk
+claseCuerpo: inicio
+---
+<section class="hero envoltura">
+  <div class="hero-arriba">
+    <p class="etiqueta">Cuaderno · sistemas · complejidad · tiempo · ser</p>
+    {% set claseMarca = "marca-hero" %}{% include "marca.njk" %}
+  </div>
+  <h1 class="titular">
+    <span>El sentido común</span>
+    <span class="c-ser">ya no es común.</span>
+    <span class="c-tiempo">Ni tiene sentido.</span>
+  </h1>
+  <div class="hero-abajo">
+    <p class="bajada">Pienso sobre sistemas, complejidad, tiempo y ser. Y lo llevo a organizaciones, equipos y líderes que ya intuyen que <em>la receta</em> no alcanza.</p>
+    <p class="mono-suave derecha">Sabemos más.<br>Nos falta distinguirlo. ↓</p>
+  </div>
+</section>
+
+<section class="movimientos envoltura" aria-label="Cómo trabajo">
+  <div class="movimiento">
+    <span class="mono c-ser">01 —</span>
+    <h2>Crear distinciones</h2>
+    <p>Nombrar lo que ya está ahí, a simple vista, y nadie estaba viendo.</p>
+  </div>
+  <div class="movimiento">
+    <span class="mono c-sistemas">02 —</span>
+    <h2>Leer el sistema</h2>
+    <p>Entender relaciones, restricciones y patrones antes de intervenir.</p>
+  </div>
+  <div class="movimiento">
+    <span class="mono c-tiempo">03 —</span>
+    <h2>Diseñar colaboración</h2>
+    <p>Formas de trabajar que funcionan en contextos complejos, no en diagramas.</p>
+  </div>
+</section>
+
+<section id="cuaderno" class="seccion envoltura">
+  <div class="seccion-cabeza">
+    <div>
+      <p class="etiqueta">Lo que voy notando</p>
+      <h2 class="titulo-seccion">Cuaderno</h2>
+    </div>
+  </div>
+  {% set notas = collections.cuaderno | recientes(8) %}
+  {% include "lista-notas.njk" %}
+  <div class="seccion-pie">
+    <a class="enlace-mono" href="/cuaderno/">Todo el cuaderno →</a>
+    <span class="mono-suave">También en <a href="{{ site.linkedin }}">LinkedIn ↗</a> · <a href="/feed.xml">RSS</a></span>
+  </div>
+</section>
+
+<section id="tanmayo" class="seccion envoltura">
+  <p class="etiqueta">La práctica</p>
+  <h2 class="tanmayo">Tanmayo</h2>
+  <div class="tanmayo-cuerpo">
+    <div class="tanmayo-texto">
+      <p class="grande">Donde estas ideas se vuelven trabajo. Construida sobre años de gestión de proyectos, gestión de producto, complejidad y experiencia global.</p>
+      <p class="mono-suave">No es otro framework ágil. Son ABCs para re-pensar y distinguir: ver distinto antes de hacer distinto.</p>
+      <a class="boton" href="#conversemos">Conversemos sobre tu contexto ↗</a>
+    </div>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="raya f-sistemas"></span><h3>Organizaciones</h3><p>Cuando la transformación agregó roles y eventos, pero no mejores resultados.</p></div>
+      <div class="tarjeta"><span class="raya f-tiempo"></span><h3>Equipos</h3><p>Cuando el equipo se esfuerza, pero no avanza como se espera.</p></div>
+      <div class="tarjeta"><span class="raya f-ser"></span><h3>Líderes</h3><p>Coaching ejecutivo para decidir en medio de complejidad, tensiones y caos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="compas" class="compas">
+  <div class="envoltura compas-dentro">
+    <a class="compas-portada" href="/compas-animico/"><img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy"></a>
+    <div class="compas-texto">
+      <p class="etiqueta">Libro · 20 principios</p>
+      <h2>El Pequeño Libro del Compás Anímico</h2>
+      <p class="grande cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
+      <p>Cada frase es una semilla. Tiene números, pero no un orden: solo la dirección que tu compás elija.</p>
+      <div class="botones">
+        <a class="boton boton-oscuro" href="/compas-animico/">Explorar los 20 principios</a>
+        {% if site.libroEnlace %}<a class="boton boton-borde" href="{{ site.libroEnlace }}">Conseguir el libro</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="seccion envoltura sobre">
+  <div class="sobre-foto">
+    <p class="etiqueta">Sobre mí</p>
+    {% if site.foto %}
+    <img src="{{ site.foto }}" alt="Sergio Guevara" width="800" height="1000" loading="lazy">
+    {% else %}
+    <div class="foto-vacia">[ tu foto ]<br>súbela a src/assets/img/ y escribe su ruta en site.json → "foto"</div>
+    {% endif %}
+  </div>
+  <div class="sobre-texto">
+    <p class="grande">Soy Sergio Guevara. Más de 20 años en proyectos, productos y transformaciones. Hoy acompaño a una organización financiera compleja, enseño sobre agilidad, cultura y complejidad, y escribo, facilito talleres y construyo comunidad.</p>
+    <p>Creo en el cambio como lo describe Jullien: transformaciones silenciosas, propensión antes que plan.</p>
+    <div class="linaje">
+      <p class="etiqueta">Pienso con</p>
+      <p class="mono">Heidegger · Merleau-Ponty · Varela · Maturana · Evan Thompson · Ricoeur · Bergson · Jullien · Safranski</p>
+    </div>
+  </div>
+</section>

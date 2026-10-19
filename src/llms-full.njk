@@ -1,0 +1,26 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# Sergio Guevara — contenido completo
+
+> {{ site.descripcion }}
+
+Fuente: {{ site.url }} · Autor: {{ site.autor }}
+{% for nota in collections.cuaderno | reverse %}
+
+---
+
+## {{ nota.data.title }}
+URL: {{ site.url }}{{ nota.url }}
+Fecha: {{ nota.date | fechaISO }} · {{ nota.data.tipo }} · Tema: {{ nota.data.tema }}
+
+{{ nota.content | striptags(true) | safe }}
+{%- endfor %}
+
+---
+
+## El Pequeño Libro del Compás Anímico — 20 principios
+{% for p in principios %}
+{{ p.n }}. {{ p.titulo }}: {{ p.frase }}
+{%- endfor %}

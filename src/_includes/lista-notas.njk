@@ -1,0 +1,25 @@
+{# Lista filtrable de notas. Espera la variable `notas` (más reciente primero). #}
+<div class="filtros" role="group" aria-label="Filtrar el cuaderno">
+  <button type="button" class="chip" data-filtro="todo" aria-pressed="true">Todo</button>
+  <button type="button" class="chip" data-filtro="Nota" aria-pressed="false">Notas</button>
+  <button type="button" class="chip" data-filtro="Ensayo" aria-pressed="false">Ensayos</button>
+  <button type="button" class="chip chip-sistemas" data-filtro="Sistemas" aria-pressed="false">● Sistemas</button>
+  <button type="button" class="chip chip-tiempo" data-filtro="Tiempo" aria-pressed="false">● Tiempo</button>
+  <button type="button" class="chip chip-ser" data-filtro="Ser" aria-pressed="false">● Ser</button>
+</div>
+<ol class="notas" reversed>
+  {% for nota in notas %}
+  <li class="nota tema-{{ nota.data.tema | slugTema }}" data-tipo="{{ nota.data.tipo }}" data-tema="{{ nota.data.tema }}">
+    <a href="{{ nota.url }}">
+      <span class="nota-num">{{ collections.cuaderno | numero(nota.url) }}</span>
+      <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ nota.data.tipo }} · {{ nota.data.tema }}</span>
+      <span class="nota-cuerpo">
+        <span class="nota-titulo">{{ nota.data.title }}</span>
+        {% if nota.data.extracto %}<span class="nota-extracto">{{ nota.data.extracto }}</span>{% endif %}
+      </span>
+      <span class="nota-flecha" aria-hidden="true">→</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+<p class="sin-resultados" hidden>Todavía no hay nada aquí. Pronto.</p>

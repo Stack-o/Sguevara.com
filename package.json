@@ -1,0 +1,17 @@
+{
+  "name": "sguevara-com",
+  "version": "1.0.0",
+  "description": "sguevara.com — El Cuaderno de Sergio Guevara",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-plugin-rss": "^2.0.4"
+  },
+  "type": "module",
+  "private": true
+}

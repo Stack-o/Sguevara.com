@@ -1,0 +1,38 @@
+---
+layout: base.njk
+claseCuerpo: lectura
+---
+{% set temaSlug = tema | slugTema %}
+<div class="progreso" aria-hidden="true"><span class="progreso-barra f-{{ temaSlug }}"></span></div>
+<article class="articulo envoltura-lectura tema-{{ temaSlug }}">
+  <div class="articulo-meta">
+    <span>{{ collections.cuaderno | numero(page.url) }}</span>
+    <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ tipo }} · {{ tema }}</span>
+    <time datetime="{{ page.date | fechaISO }}">{{ page.date | fecha }}</time>
+    <span>{{ content | lectura }} min</span>
+  </div>
+  <h1 class="articulo-titulo">{{ title }}</h1>
+  <div class="prosa">
+    {{ content | safe }}
+  </div>
+  <div class="articulo-pie">
+    <span>{% if fuente %}{{ fuente }}{% else %}{{ site.autor }}{% endif %}</span>
+    <a href="{{ site.linkedin }}">Conversar en LinkedIn ↗</a>
+  </div>
+</article>
+
+{% set anterior = collections.cuaderno | getPreviousCollectionItem(page) %}
+{% set siguiente = collections.cuaderno | getNextCollectionItem(page) %}
+{% if anterior or siguiente %}
+<nav class="sigue envoltura" aria-label="Más notas">
+  <p class="etiqueta">Sigue leyendo</p>
+  <div class="sigue-rejilla">
+    {% for n in [siguiente, anterior] %}{% if n %}
+    <a class="sigue-item tema-{{ n.data.tema | slugTema }}" href="{{ n.url }}">
+      <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ n.data.tipo }} · {{ n.data.tema }}</span>
+      <span class="nota-titulo">{{ n.data.title }}</span>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+</nav>
+{% endif %}
