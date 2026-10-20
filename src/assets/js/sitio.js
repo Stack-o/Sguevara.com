@@ -34,7 +34,7 @@
     };
     marcar();
     if (quieto) return;
-    setInterval(function () { i = (i + 1) % items.length; marcar(); }, k === 0 ? 3200 : 4600);
+    setInterval(function () { i = (i + 1) % items.length; marcar(); }, 6000);
   });
 
   // Contador que sube al aparecer

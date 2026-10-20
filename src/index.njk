@@ -25,9 +25,9 @@ claseCuerpo: inicio
       <circle cx="200" cy="200" r="196"></circle>
     </svg>
     <svg class="marca marca-bento" viewBox="0 0 120 140" role="img" aria-label="Tanmayo">
-      <circle class="punto p1" cx="34" cy="16" r="11"></circle>
-      <circle class="punto p2" cx="60" cy="16" r="11"></circle>
-      <circle class="punto p3" cx="86" cy="16" r="11"></circle>
+      <g class="orbita o1"><g class="orbita-y"><circle class="punto p1" cx="33" cy="25" r="8.5"></circle></g></g>
+      <g class="orbita o2"><g class="orbita-y"><circle class="punto p2" cx="60" cy="23" r="8.5"></circle></g></g>
+      <g class="orbita o3"><g class="orbita-y"><circle class="punto p3" cx="87" cy="25" r="8.5"></circle></g></g>
       <path class="trazo" d="M8 58 C18 48 44 44 70 43 C88 42 104 42 114 40 C112 44 108 47 102 48 C82 50 52 52 30 58 C22 60 16 64 12 68 C8 66 6 62 8 58 Z"></path>
       <path class="trazo" d="M60 46 C66 45 70 47 69 52 C66 76 64 104 62 134 C58 128 55 108 54 84 C53 68 54 54 60 46 Z"></path>
     </svg>
@@ -57,16 +57,6 @@ claseCuerpo: inicio
   </a>
   {% endif %}
 
-  <!-- Cómo trabajo: rota -->
-  <div class="t t-mov" aria-label="Cómo trabajo">
-    <p class="etiqueta">Cómo trabajo</p>
-    <ol class="rota" data-rota>
-      <li class="activo"><span class="mono c-ser">01</span><span class="rota-txt">Crear distinciones</span><span class="b-texto suave">Nombrar lo que ya está ahí y nadie estaba viendo.</span></li>
-      <li><span class="mono c-sistemas">02</span><span class="rota-txt">Leer el sistema</span><span class="b-texto suave">Relaciones, restricciones y patrones antes de intervenir.</span></li>
-      <li><span class="mono c-tiempo">03</span><span class="rota-txt">Diseñar colaboración</span><span class="b-texto suave">Formas de trabajar para contextos complejos.</span></li>
-    </ol>
-    <div class="rota-puntos" aria-hidden="true"><span class="f-ser"></span><span class="f-sistemas"></span><span class="f-tiempo"></span></div>
-  </div>
 
   <!-- Conversemos -->
   <a class="t t-conv" href="{{ site.linkedin }}">
@@ -100,14 +90,6 @@ claseCuerpo: inicio
     </div>
   </div>
 
-  <!-- Linaje: marquesina -->
-  <div class="t t-linaje" aria-label="Pienso con: Heidegger, Merleau-Ponty, Varela, Maturana, Evan Thompson, Ricoeur, Bergson, Jullien, Safranski">
-    <div class="marquesina" aria-hidden="true">
-      {% for vuelta in [1, 2] %}
-      <span>Pienso con</span><span>Heidegger</span><span>·</span><span>Merleau-Ponty</span><span>·</span><span>Varela</span><span>·</span><span>Maturana</span><span>·</span><span>Evan Thompson</span><span>·</span><span>Ricoeur</span><span>·</span><span>Bergson</span><span>·</span><span>Jullien</span><span>·</span><span>Safranski</span><span>·</span>
-      {% endfor %}
-    </div>
-  </div>
 
   <!-- Cuaderno -->
   <div class="t t-lista" id="cuaderno">

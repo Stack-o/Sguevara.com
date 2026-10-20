@@ -548,3 +548,46 @@ a.t:hover { transform: translateY(-4px); border-color: #3A3A3E; }
 .rota { min-height: 190px; }
 @media (max-width: 1100px) { .bento { grid-template-rows: none; grid-auto-rows: minmax(220px, auto); } .t-linaje { min-height: 0; } }
 @media (max-width: 640px) { .bento { grid-auto-rows: auto; } }
+
+/* ===== v3: sin marquesina ni "cómo trabajo"; T con órbitas; Tanmayo violeta ===== */
+.bento {
+  grid-template-rows: minmax(250px, auto) minmax(250px, auto) minmax(260px, auto) minmax(300px, auto) auto;
+  grid-template-areas:
+    "titular marca marca sobre"
+    "titular marca marca anos"
+    "nota    nota  nota  conv"
+    "compas  compas tanmayo tanmayo"
+    "lista   lista  lista ia";
+}
+@media (max-width: 1100px) {
+  .bento { grid-template-rows: none; grid-template-areas: "marca marca" "titular sobre" "titular anos" "nota nota" "conv conv" "compas compas" "tanmayo tanmayo" "lista lista" "ia ia"; }
+}
+@media (max-width: 640px) {
+  .bento { grid-template-areas: "marca" "titular" "nota" "conv" "sobre" "anos" "compas" "tanmayo" "lista" "ia"; }
+}
+
+/* Tanmayo: se llena de violeta, lento */
+:root { --violeta: #9B5CFF; }
+.b-tanmayo {
+  background: linear-gradient(90deg, var(--violeta) 0 33%, transparent 33% 100%);
+  background-size: 300% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  animation: barrido 22s cubic-bezier(.45,0,.55,1) infinite;
+}
+.t-tanmayo { background: linear-gradient(135deg, #1D1430 0%, #141416 60%); }
+
+/* Los tres puntos: órbitas elípticas lentas, cerca de la T, como atraídos por ella */
+.marca-bento .punto { animation: none; }
+.marca-bento .orbita, .marca-bento .orbita-y { animation-timing-function: cubic-bezier(.37,0,.63,1); animation-iteration-count: infinite; animation-direction: alternate; }
+.marca-bento .o1 { animation-name: orbX; animation-duration: 7s; --ax: -4px; }
+.marca-bento .o1 .orbita-y { animation-name: orbY; animation-duration: 7s; animation-delay: -3.5s; --ay: 3px; }
+.marca-bento .o2 { animation-name: orbX; animation-duration: 9s; animation-delay: -2s; --ax: 3.5px; }
+.marca-bento .o2 .orbita-y { animation-name: orbY; animation-duration: 9s; animation-delay: -6.5s; --ay: -4px; }
+.marca-bento .o3 { animation-name: orbX; animation-duration: 8s; animation-delay: -5s; --ax: 4px; }
+.marca-bento .o3 .orbita-y { animation-name: orbY; animation-duration: 8s; animation-delay: -1s; --ay: 3px; }
+@keyframes orbX { from { transform: translateX(var(--ax)); } to { transform: translateX(calc(var(--ax) * -1)); } }
+@keyframes orbY { from { transform: translateY(var(--ay)); } to { transform: translateY(calc(var(--ay) * -1)); } }
+.t-marca:hover .orbita, .t-marca:hover .orbita-y { animation-play-state: running; }
+@media (prefers-reduced-motion: reduce) { .marca-bento .orbita, .marca-bento .orbita-y, .b-tanmayo { animation: none !important; } }
+.b-tanmayo { background: linear-gradient(90deg, var(--violeta) 0 30%, rgba(155,92,255,.35) 33%, transparent 36% 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; animation: llenar 22s cubic-bezier(.45,0,.55,1) infinite; }
+@keyframes llenar { 0%, 8% { background-position: 100% 0; } 45%, 62% { background-position: 0 0; } 100% { background-position: 100% 0; } }
