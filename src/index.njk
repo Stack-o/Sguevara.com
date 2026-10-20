@@ -2,103 +2,135 @@
 layout: base.njk
 claseCuerpo: inicio
 ---
-<section class="hero envoltura">
-  <div class="hero-arriba">
+{% set recientes = collections.cuaderno | recientes(4) %}
+{% set ultima = recientes[0] %}
+<section class="bento envoltura" aria-label="Inicio">
+
+  <!-- Titular -->
+  <div class="t t-titular">
     <p class="etiqueta">Cuaderno · sistemas · complejidad · tiempo · ser</p>
-    {% set claseMarca = "marca-hero" %}{% include "marca.njk" %}
+    <h1 class="b-titular">
+      <span>El sentido común</span>
+      <span class="c-ser">ya no es común.</span>
+      <span class="c-tiempo">Ni tiene sentido.</span>
+    </h1>
+    <p class="mono-suave">Sabemos más.<br>Nos falta distinguirlo.<span class="cursor" aria-hidden="true">_</span></p>
   </div>
-  <h1 class="titular">
-    <span>El sentido común</span>
-    <span class="c-ser">ya no es común.</span>
-    <span class="c-tiempo">Ni tiene sentido.</span>
-  </h1>
-  <div class="hero-abajo">
-    <p class="bajada">Pienso sobre sistemas, complejidad, tiempo y ser. Y lo llevo a organizaciones, equipos y líderes que ya intuyen que <em>la receta</em> no alcanza.</p>
-    <p class="mono-suave derecha">Sabemos más.<br>Nos falta distinguirlo. ↓</p>
-  </div>
-</section>
 
-<section class="movimientos envoltura" aria-label="Cómo trabajo">
-  <div class="movimiento">
-    <span class="mono c-ser">01 —</span>
-    <h2>Crear distinciones</h2>
-    <p>Nombrar lo que ya está ahí, a simple vista, y nadie estaba viendo.</p>
+  <!-- La marca, al centro -->
+  <div class="t t-marca" id="tanmayo-marca">
+    <svg class="anillos" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="120"></circle>
+      <circle cx="200" cy="200" r="160"></circle>
+      <circle cx="200" cy="200" r="196"></circle>
+    </svg>
+    <svg class="marca marca-bento" viewBox="0 0 120 140" role="img" aria-label="Tanmayo">
+      <circle class="punto p1" cx="34" cy="16" r="11"></circle>
+      <circle class="punto p2" cx="60" cy="16" r="11"></circle>
+      <circle class="punto p3" cx="86" cy="16" r="11"></circle>
+      <path class="trazo" d="M8 58 C18 48 44 44 70 43 C88 42 104 42 114 40 C112 44 108 47 102 48 C82 50 52 52 30 58 C22 60 16 64 12 68 C8 66 6 62 8 58 Z"></path>
+      <path class="trazo" d="M60 46 C66 45 70 47 69 52 C66 76 64 104 62 134 C58 128 55 108 54 84 C53 68 54 54 60 46 Z"></path>
+    </svg>
+    <p class="marca-pie-texto"><span>Tanmayo</span> · ver distinto antes de hacer distinto</p>
   </div>
-  <div class="movimiento">
-    <span class="mono c-sistemas">02 —</span>
-    <h2>Leer el sistema</h2>
-    <p>Entender relaciones, restricciones y patrones antes de intervenir.</p>
-  </div>
-  <div class="movimiento">
-    <span class="mono c-tiempo">03 —</span>
-    <h2>Diseñar colaboración</h2>
-    <p>Formas de trabajar que funcionan en contextos complejos, no en diagramas.</p>
-  </div>
-</section>
 
-<section id="cuaderno" class="seccion envoltura">
-  <div class="seccion-cabeza">
-    <div>
-      <p class="etiqueta">Lo que voy notando</p>
-      <h2 class="titulo-seccion">Cuaderno</h2>
-    </div>
-  </div>
-  {% set notas = collections.cuaderno | recientes(8) %}
-  {% include "lista-notas.njk" %}
-  <div class="seccion-pie">
-    <a class="enlace-mono" href="/cuaderno/">Todo el cuaderno →</a>
-    <span class="mono-suave">También en <a href="{{ site.linkedin }}">LinkedIn ↗</a> · <a href="/feed.xml">RSS</a></span>
-  </div>
-</section>
-
-<section id="tanmayo" class="seccion envoltura">
-  <p class="etiqueta">La práctica</p>
-  <h2 class="tanmayo">Tanmayo</h2>
-  <div class="tanmayo-cuerpo">
-    <div class="tanmayo-texto">
-      <p class="grande">Donde estas ideas se vuelven trabajo. Construida sobre años de gestión de proyectos, gestión de producto, complejidad y experiencia global.</p>
-      <p class="mono-suave">No es otro framework ágil. Son ABCs para re-pensar y distinguir: ver distinto antes de hacer distinto.</p>
-      <a class="boton" href="#conversemos">Conversemos sobre tu contexto ↗</a>
-    </div>
-    <div class="tarjetas">
-      <div class="tarjeta"><span class="raya f-sistemas"></span><h3>Organizaciones</h3><p>Cuando la transformación agregó roles y eventos, pero no mejores resultados.</p></div>
-      <div class="tarjeta"><span class="raya f-tiempo"></span><h3>Equipos</h3><p>Cuando el equipo se esfuerza, pero no avanza como se espera.</p></div>
-      <div class="tarjeta"><span class="raya f-ser"></span><h3>Líderes</h3><p>Coaching ejecutivo para decidir en medio de complejidad, tensiones y caos.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="compas" class="compas">
-  <div class="envoltura compas-dentro">
-    <a class="compas-portada" href="/compas-animico/"><img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy"></a>
-    <div class="compas-texto">
-      <p class="etiqueta">Libro · 20 principios</p>
-      <h2>El Pequeño Libro del Compás Anímico</h2>
-      <p class="grande cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
-      <p>Cada frase es una semilla. Tiene números, pero no un orden: solo la dirección que tu compás elija.</p>
-      <div class="botones">
-        <a class="boton boton-oscuro" href="/compas-animico/">Explorar los 20 principios</a>
-        {% if site.libroEnlace %}<a class="boton boton-borde" href="{{ site.libroEnlace }}">Conseguir el libro</a>{% endif %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="sobre" class="seccion envoltura sobre">
-  <div class="sobre-foto">
+  <!-- Sobre mí -->
+  <div class="t t-sobre" id="sobre">
     <p class="etiqueta">Sobre mí</p>
-    {% if site.foto %}
-    <img src="{{ site.foto }}" alt="Sergio Guevara" width="800" height="1000" loading="lazy">
-    {% else %}
-    <div class="foto-vacia">[ tu foto ]<br>súbela a src/assets/img/ y escribe su ruta en site.json → "foto"</div>
-    {% endif %}
+    <p class="b-texto">Soy <strong>Sergio Guevara</strong>. Enseño agilidad, cultura y complejidad, acompaño a una organización financiera compleja, escribo y facilito talleres.</p>
+    <a class="enlace-mono abajo" href="{{ site.linkedin }}">LinkedIn ↗</a>
   </div>
-  <div class="sobre-texto">
-    <p class="grande">Soy Sergio Guevara. Más de 20 años en proyectos, productos y transformaciones. Hoy acompaño a una organización financiera compleja, enseño sobre agilidad, cultura y complejidad, y escribo, facilito talleres y construyo comunidad.</p>
-    <p>Creo en el cambio como lo describe Jullien: transformaciones silenciosas, propensión antes que plan.</p>
-    <div class="linaje">
-      <p class="etiqueta">Pienso con</p>
-      <p class="mono">Heidegger · Merleau-Ponty · Varela · Maturana · Evan Thompson · Ricoeur · Bergson · Jullien · Safranski</p>
+
+  <!-- Años -->
+  <div class="t t-anos">
+    <p class="b-numero"><span class="contador" data-hasta="20">20</span>+</p>
+    <p class="b-texto suave">años entre proyectos, producto, complejidad y equipos globales.</p>
+  </div>
+
+  <!-- Última nota -->
+  {% if ultima %}
+  <a class="t t-nota tema-{{ ultima.data.tema | slugTema }}" href="{{ ultima.url }}">
+    <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>Última nota · {{ ultima.data.tema }} · {{ collections.cuaderno | numero(ultima.url) }}</span>
+    <span class="b-nota-titulo">{{ ultima.data.title }}</span>
+    <span class="b-texto suave">{{ ultima.data.extracto }}</span>
+    <span class="enlace-mono abajo">Leer nota →</span>
+  </a>
+  {% endif %}
+
+  <!-- Cómo trabajo: rota -->
+  <div class="t t-mov" aria-label="Cómo trabajo">
+    <p class="etiqueta">Cómo trabajo</p>
+    <ol class="rota" data-rota>
+      <li class="activo"><span class="mono c-ser">01</span><span class="rota-txt">Crear distinciones</span><span class="b-texto suave">Nombrar lo que ya está ahí y nadie estaba viendo.</span></li>
+      <li><span class="mono c-sistemas">02</span><span class="rota-txt">Leer el sistema</span><span class="b-texto suave">Relaciones, restricciones y patrones antes de intervenir.</span></li>
+      <li><span class="mono c-tiempo">03</span><span class="rota-txt">Diseñar colaboración</span><span class="b-texto suave">Formas de trabajar para contextos complejos.</span></li>
+    </ol>
+    <div class="rota-puntos" aria-hidden="true"><span class="f-ser"></span><span class="f-sistemas"></span><span class="f-tiempo"></span></div>
+  </div>
+
+  <!-- Conversemos -->
+  <a class="t t-conv" href="{{ site.linkedin }}">
+    <span class="etiqueta">¿Tu equipo se esfuerza y no avanza?</span>
+    <span class="b-conv">Conver&shy;semos <span class="flecha">↗</span></span>
+  </a>
+
+  <!-- Compás Anímico -->
+  <a class="t t-compas" href="/compas-animico/">
+    <img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy">
+    <div class="compas-lado">
+      <span class="etiqueta">Libro · 20 principios</span>
+      <ul class="principios-rota" data-rota>
+        {% for p in principios %}
+        <li{% if loop.first %} class="activo"{% endif %}><span class="pr-n">{{ p.n }}</span><span class="pr-t">{{ p.frase }}</span></li>
+        {% endfor %}
+      </ul>
+      <span class="enlace-mono abajo">El Pequeño Libro del Compás Anímico →</span>
     </div>
+  </a>
+
+  <!-- Tanmayo -->
+  <div class="t t-tanmayo" id="tanmayo">
+    <p class="etiqueta">La práctica</p>
+    <p class="b-tanmayo" aria-label="Tanmayo">Tanmayo</p>
+    <p class="b-texto">Ideas que se vuelven trabajo. No otro framework ágil: ABCs para re-pensar y distinguir.</p>
+    <div class="chips-fijas">
+      <span class="chip-fija"><span class="punto-tema f-sistemas"></span>Organizaciones</span>
+      <span class="chip-fija"><span class="punto-tema f-tiempo"></span>Equipos</span>
+      <span class="chip-fija"><span class="punto-tema f-ser"></span>Líderes</span>
+    </div>
+  </div>
+
+  <!-- Linaje: marquesina -->
+  <div class="t t-linaje" aria-label="Pienso con: Heidegger, Merleau-Ponty, Varela, Maturana, Evan Thompson, Ricoeur, Bergson, Jullien, Safranski">
+    <div class="marquesina" aria-hidden="true">
+      {% for vuelta in [1, 2] %}
+      <span>Pienso con</span><span>Heidegger</span><span>·</span><span>Merleau-Ponty</span><span>·</span><span>Varela</span><span>·</span><span>Maturana</span><span>·</span><span>Evan Thompson</span><span>·</span><span>Ricoeur</span><span>·</span><span>Bergson</span><span>·</span><span>Jullien</span><span>·</span><span>Safranski</span><span>·</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Cuaderno -->
+  <div class="t t-lista" id="cuaderno">
+    <div class="lista-cabeza">
+      <p class="b-cuaderno">Cuaderno</p>
+      <a class="enlace-mono" href="/cuaderno/">Todo el cuaderno →</a>
+    </div>
+    <ul class="lista-compacta">
+      {% for n in recientes %}{% if not loop.first %}
+      <li class="tema-{{ n.data.tema | slugTema }}"><a href="{{ n.url }}">
+        <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ n.data.tipo }} · {{ n.data.tema }}</span>
+        <span class="lc-titulo">{{ n.data.title }}</span>
+        <span class="nota-flecha" aria-hidden="true">→</span>
+      </a></li>
+      {% endif %}{% endfor %}
+    </ul>
+  </div>
+
+  <!-- IA / suscribirse -->
+  <div class="t t-ia">
+    <p class="etiqueta">Pregúntale a tu IA</p>
+    <p class="b-texto">Todo mi pensamiento, legible para asistentes de IA.</p>
+    <a class="enlace-mono" href="/llms.txt">sguevara.com/llms.txt ↗</a>
+    <p class="enlace-mono abajo"><a href="/feed.xml">RSS</a> · <a href="{{ site.linkedin }}">LinkedIn</a></p>
   </div>
 </section>
