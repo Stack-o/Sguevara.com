@@ -53,7 +53,7 @@ claseCuerpo: inicio
       <h2 class="titulo-seccion">Anotaciones</h2>
     </div>
   </div>
-  {% set notas = collections.anotaciones | recientes(5) %}
+  {% set notas = collections.anotaciones | paraInicio(5) %}{% set destacarEnLista = true %}
   {% include "lista-notas.njk" %}
   <div class="seccion-pie">
     <a class="enlace-mono" href="/anotaciones/">Todas las anotaciones →</a>

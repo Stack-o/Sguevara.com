@@ -4,6 +4,8 @@ tipo: Nota
 tema: Ser
 extracto: Podemos usar la misma lógica, pero no llegaremos al destino querido si el ánimo que nos guía es distinto.
 fuente: Del Compás Anímico · principio 9
+etiquetas: [decisiones, estados anímicos, compás anímico]
+destacada: false
 ---
 
 No hay decisiones puramente racionales. Toda elección se hace desde un estado.

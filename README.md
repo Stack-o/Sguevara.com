@@ -19,12 +19,18 @@ title: Título de la nota
 tipo: Nota        # Nota o Ensayo
 tema: Sistemas    # Sistemas, Tiempo o Ser
 extracto: Una o dos frases para la lista de Anotaciones.
+etiquetas: [silos, decisiones]   # opcional
+destacada: false                 # opcional: true = primero en el inicio
 ---
 
 Tu texto. Párrafos separados por una línea en blanco.
 
 > Una cita destacada.
 ```
+
+**`etiquetas`** (opcional): palabras clave de la nota, en minúscula, entre corchetes y separadas por coma. Hoy se muestran al pie de la nota; más adelante servirán para el buscador, las "notas relacionadas" y las páginas por tema. Conviene ponerlas desde ahora.
+
+**`destacada`** (opcional): con `true`, la nota aparece primero en el inicio (con ★), antes que las más recientes. Úsalo para tus 2–3 notas fundacionales.
 
 El número (N°05, N°06…), el tiempo de lectura, el feed RSS, el mapa del sitio y los archivos para IA (`/llms.txt`, `/llms-full.txt`) se actualizan solos.
 

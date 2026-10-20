@@ -4,6 +4,8 @@ tipo: Nota
 tema: Sistemas
 extracto: Me muevo con el clima que me rodea. Y también lo modifico.
 fuente: Del Compás Anímico · principio 19
+etiquetas: [relaciones, sistemas vivos, compás anímico]
+destacada: false
 ---
 
 No soy una isla.

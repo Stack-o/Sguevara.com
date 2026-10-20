@@ -43,6 +43,21 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("recientes", (arr, n) => (arr || []).slice().reverse().slice(0, n));
 
+  // Inicio: primero las notas con "destacada: true", luego las más recientes hasta completar n
+  eleventyConfig.addFilter("paraInicio", (arr, n) => {
+    const todas = (arr || []).slice().reverse();
+    const dest = todas.filter((p) => p.data.destacada === true);
+    const resto = todas.filter((p) => p.data.destacada !== true);
+    return dest.concat(resto).slice(0, n);
+  });
+
+  // Etiquetas: acepta lista [a, b] o texto "a, b"; devuelve lista limpia
+  eleventyConfig.addFilter("listaEtiquetas", (e) => {
+    if (!e) return [];
+    const arr = Array.isArray(e) ? e : String(e).split(",");
+    return arr.map((x) => String(x).trim()).filter(Boolean);
+  });
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",

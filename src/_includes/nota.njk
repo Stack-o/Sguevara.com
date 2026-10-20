@@ -15,6 +15,12 @@ claseCuerpo: lectura
   <div class="prosa">
     {{ content | safe }}
   </div>
+  {% set misEtiquetas = etiquetas | listaEtiquetas %}
+  {% if misEtiquetas.length %}
+  <ul class="etiquetas" aria-label="Etiquetas">
+    {% for e in misEtiquetas %}<li>#{{ e }}</li>{% endfor %}
+  </ul>
+  {% endif %}
   <div class="articulo-pie">
     <span>{% if fuente %}{{ fuente }}{% else %}{{ site.autor }}{% endif %}</span>
     <a href="{{ site.linkedin }}">Conversar en LinkedIn ↗</a>

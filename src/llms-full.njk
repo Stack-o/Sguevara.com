@@ -13,7 +13,7 @@ Fuente: {{ site.url }} · Autor: {{ site.autor }}
 
 ## {{ nota.data.title }}
 URL: {{ site.url }}{{ nota.url }}
-Fecha: {{ nota.date | fechaISO }} · {{ nota.data.tipo }} · Tema: {{ nota.data.tema }}
+Fecha: {{ nota.date | fechaISO }} · {{ nota.data.tipo }} · Tema: {{ nota.data.tema }}{% set et = nota.data.etiquetas | listaEtiquetas %}{% if et.length %} · Etiquetas: {{ et | join(", ") }}{% endif %}
 
 {{ nota.content | striptags(true) | safe }}
 {%- endfor %}

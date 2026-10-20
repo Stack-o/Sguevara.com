@@ -4,6 +4,8 @@ tipo: Nota
 tema: Ser
 extracto: Un “no puedo” repetido puede cerrar caminos antes de empezar. Cada palabra que decimos es una acción.
 fuente: Del Compás Anímico · principio 5
+etiquetas: [lenguaje, posibilidades, compás anímico]
+destacada: false
 ---
 
 El lenguaje no solo describe el mundo. Lo crea.

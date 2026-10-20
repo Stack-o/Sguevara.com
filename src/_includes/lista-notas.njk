@@ -14,6 +14,7 @@
       <span class="nota-num">{{ collections.anotaciones | numero(nota.url) }}</span>
       <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ nota.data.tipo }} · {{ nota.data.tema }}</span>
       <span class="nota-cuerpo">
+        {% if nota.data.destacada and destacarEnLista %}<span class="nota-destacada">★ Destacada</span>{% endif %}
         <span class="nota-titulo">{{ nota.data.title }}</span>
         {% if nota.data.extracto %}<span class="nota-extracto">{{ nota.data.extracto }}</span>{% endif %}
       </span>
