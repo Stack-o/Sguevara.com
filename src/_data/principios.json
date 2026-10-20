@@ -1,13 +1,13 @@
 [
-  { "n": 1, "titulo": "El ser humano es movimiento", "frase": "El ser humano no es estático. Es movimiento.", "nota": "/cuaderno/el-ser-humano-es-movimiento/" },
+  { "n": 1, "titulo": "El ser humano es movimiento", "frase": "El ser humano no es estático. Es movimiento.", "nota": "/anotaciones/el-ser-humano-es-movimiento/" },
   { "n": 2, "titulo": "Cuerpo es mente. Mente es cuerpo", "frase": "No existe pensamiento sin cuerpo. Toda idea nace desde un pulso, una tensión, un músculo que recuerda." },
   { "n": 3, "titulo": "El estado anímico lo tiñe todo", "frase": "Lo que parece realidad muchas veces es solo un clima interno no nombrado." },
   { "n": 4, "titulo": "La mente predice lo que espera", "frase": "No vemos el mundo como es. Lo vemos como estamos entrenados a verlo." },
-  { "n": 5, "titulo": "El lenguaje crea", "frase": "Las palabras no solo transmiten o cuentan historias. Crean mundos nuevos.", "nota": "/cuaderno/el-lenguaje-crea/" },
+  { "n": 5, "titulo": "El lenguaje crea", "frase": "Las palabras no solo transmiten o cuentan historias. Crean mundos nuevos.", "nota": "/anotaciones/el-lenguaje-crea/" },
   { "n": 6, "titulo": "Las relaciones son parte de nuestro ser", "frase": "Las relaciones no son accesorias. Nos constituyen." },
   { "n": 7, "titulo": "Vivimos el futuro que queremos", "frase": "…pero también el que creemos posible." },
   { "n": 8, "titulo": "Coherencia es alinear", "frase": "Alinear es sintonizar lo que siento, pienso, digo y hago… y lo que callo." },
-  { "n": 9, "titulo": "Toda elección nace desde un estado anímico", "frase": "No hay decisiones puramente racionales. Toda elección nace desde un estado.", "nota": "/cuaderno/toda-eleccion-nace-desde-un-estado-animico/" },
+  { "n": 9, "titulo": "Toda elección nace desde un estado anímico", "frase": "No hay decisiones puramente racionales. Toda elección nace desde un estado.", "nota": "/anotaciones/toda-eleccion-nace-desde-un-estado-animico/" },
   { "n": 10, "titulo": "Para realmente cambiar, necesito saber desde dónde", "frase": "Para cambiar lo que hago, necesito cambiar desde dónde lo hago." },
   { "n": 11, "titulo": "Las narrativas configuran lo que soy y puedo ser", "frase": "Las narrativas no son neutras. Dan forma a lo que soy y dejo de ser." },
   { "n": 12, "titulo": "Aunque sólo mire, me cambio", "frase": "No puedo sólo observar sin participar. Lo que miro, me cambia." },
@@ -17,6 +17,6 @@
   { "n": 16, "titulo": "Transformar es ajustar mis filtros y creencias", "frase": "El verdadero cambio no es forzado. La transformación se da cuando ajusto mis filtros y creencias." },
   { "n": 17, "titulo": "El compás anímico abre posibilidades", "frase": "El compás no da instrucciones. Da dirección, abre posibilidades." },
   { "n": 18, "titulo": "Alinear no siempre es cómodo", "frase": "Alinear no siempre es cómodo. Pero siempre es honesto." },
-  { "n": 19, "titulo": "Soy una red en movimiento", "frase": "No soy una isla. Soy una red viva en movimiento que afecta y es afectada.", "nota": "/cuaderno/soy-una-red-en-movimiento/" },
+  { "n": 19, "titulo": "Soy una red en movimiento", "frase": "No soy una isla. Soy una red viva en movimiento que afecta y es afectada.", "nota": "/anotaciones/soy-una-red-en-movimiento/" },
   { "n": 20, "titulo": "Cada vez que observo distinto, cambio", "frase": "Cada vez que observo distinto, algo en mí empieza a cambiar." }
 ]

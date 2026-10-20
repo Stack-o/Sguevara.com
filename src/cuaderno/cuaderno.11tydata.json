@@ -1,5 +1,0 @@
-{
-  "layout": "nota.njk",
-  "tags": "cuaderno",
-  "permalink": "/cuaderno/{{ page.fileSlug }}/"
-}

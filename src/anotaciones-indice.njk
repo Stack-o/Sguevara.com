@@ -1,13 +1,13 @@
 ---
 layout: base.njk
-title: Cuaderno
-permalink: /cuaderno/
+title: Anotaciones
+permalink: /anotaciones/
 descripcion: Notas cortas y ensayos de Sergio Guevara sobre sistemas, complejidad, tiempo y ser.
 ---
 <section class="seccion envoltura arriba">
-  <p class="etiqueta">{{ collections.cuaderno.length }} entradas · más reciente primero</p>
-  <h1 class="titulo-seccion">Cuaderno</h1>
+  <p class="etiqueta">{{ collections.anotaciones.length }} entradas · más reciente primero</p>
+  <h1 class="titulo-seccion">Anotaciones</h1>
   <p class="bajada">Notas cortas y ensayos. Lo que voy notando sobre sistemas, complejidad, tiempo y ser.</p>
-  {% set notas = collections.cuaderno | recientes(1000) %}
+  {% set notas = collections.anotaciones | recientes(1000) %}
   {% include "lista-notas.njk" %}
 </section>

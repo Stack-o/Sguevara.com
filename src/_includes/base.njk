@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% set tituloPagina = (title + " — " + site.titulo) if title else (site.titulo + " — Cuaderno") %}
+  {% set tituloPagina = (title + " — " + site.titulo) if title else (site.titulo + " — Anotaciones") %}
   <title>{{ tituloPagina }}</title>
   <meta name="description" content="{{ extracto or descripcion or site.descripcion }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0B0B0C">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="alternate" type="application/atom+xml" title="Cuaderno — Sergio Guevara" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Anotaciones — Sergio Guevara" href="/feed.xml">
   <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
@@ -27,7 +27,7 @@
       <span>Sergio Guevara</span>
     </a>
     <nav class="menu" aria-label="Principal">
-      <a href="/cuaderno/"{% if page.url.startsWith('/cuaderno') %} aria-current="page"{% endif %}>[ Cuaderno ]</a>
+      <a href="/anotaciones/"{% if page.url.startsWith('/anotaciones') %} aria-current="page"{% endif %}>[ Anotaciones ]</a>
       <a href="/#tanmayo">[ Tanmayo ]</a>
       <a href="/compas-animico/"{% if page.url == '/compas-animico/' %} aria-current="page"{% endif %}>[ Compás Anímico ]</a>
       <a href="/#sobre">[ Sobre mí ]</a>

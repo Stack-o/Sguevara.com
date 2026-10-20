@@ -2,7 +2,7 @@
 title: Título de la nota
 tipo: Nota            # Nota (corta) o Ensayo (larga)
 tema: Sistemas        # Sistemas, Tiempo o Ser
-extracto: Una o dos frases que aparecen en la lista del Cuaderno.
+extracto: Una o dos frases que aparecen en la lista de Anotaciones.
 ---
 
 Escribe aquí. Un párrafo por línea en blanco.

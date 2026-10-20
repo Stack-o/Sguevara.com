@@ -1,5 +1,5 @@
 {# Lista filtrable de notas. Espera la variable `notas` (más reciente primero). #}
-<div class="filtros" role="group" aria-label="Filtrar el cuaderno">
+<div class="filtros" role="group" aria-label="Filtrar las anotaciones">
   <button type="button" class="chip" data-filtro="todo" aria-pressed="true">Todo</button>
   <button type="button" class="chip" data-filtro="Nota" aria-pressed="false">Notas</button>
   <button type="button" class="chip" data-filtro="Ensayo" aria-pressed="false">Ensayos</button>
@@ -11,7 +11,7 @@
   {% for nota in notas %}
   <li class="nota tema-{{ nota.data.tema | slugTema }}" data-tipo="{{ nota.data.tipo }}" data-tema="{{ nota.data.tema }}">
     <a href="{{ nota.url }}">
-      <span class="nota-num">{{ collections.cuaderno | numero(nota.url) }}</span>
+      <span class="nota-num">{{ collections.anotaciones | numero(nota.url) }}</span>
       <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{{ nota.data.tipo }} · {{ nota.data.tema }}</span>
       <span class="nota-cuerpo">
         <span class="nota-titulo">{{ nota.data.title }}</span>

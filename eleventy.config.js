@@ -6,14 +6,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
-  // Feed RSS/Atom del Cuaderno → /feed.xml
+  // Feed RSS/Atom de Anotaciones → /feed.xml
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
     outputPath: "/feed.xml",
-    collection: { name: "cuaderno", limit: 30 },
+    collection: { name: "anotaciones", limit: 30 },
     metadata: {
       language: "es",
-      title: "Cuaderno — Sergio Guevara",
+      title: "Anotaciones — Sergio Guevara",
       subtitle: "Sistemas, complejidad, tiempo y ser.",
       base: "https://sguevara.com/",
       author: { name: "Sergio Guevara Guitán" },

@@ -1,0 +1,5 @@
+{
+  "layout": "nota.njk",
+  "tags": "anotaciones",
+  "permalink": "/anotaciones/{{ page.fileSlug }}/"
+}

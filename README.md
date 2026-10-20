@@ -1,4 +1,4 @@
-# sguevara.com — El Cuaderno
+# sguevara.com — Anotaciones
 
 El sitio de Sergio Guevara. Notas y ensayos en archivos de texto simples (Markdown); GitHub construye y publica el sitio solo, gratis, cada vez que guardas un cambio.
 
@@ -6,10 +6,10 @@ El sitio de Sergio Guevara. Notas y ensayos en archivos de texto simples (Markdo
 
 ## Publicar una nota (lo que harás casi siempre)
 
-1. En GitHub, abre la carpeta `src/cuaderno/`.
+1. En GitHub, abre la carpeta `src/anotaciones/`.
 2. **Add file → Create new file**.
 3. Nombre del archivo: `AAAA-MM-DD-titulo-corto.md` → por ejemplo `2026-10-20-silos.md`.
-   La fecha del nombre es la fecha de la nota; el resto será su dirección: `sguevara.com/cuaderno/silos/`.
+   La fecha del nombre es la fecha de la nota; el resto será su dirección: `sguevara.com/anotaciones/silos/`.
 4. Pega la plantilla de `plantillas/nueva-nota.md`, cambia el título y escribe.
 5. **Commit changes**. En ~1 minuto está en línea.
 
@@ -18,7 +18,7 @@ El sitio de Sergio Guevara. Notas y ensayos en archivos de texto simples (Markdo
 title: Título de la nota
 tipo: Nota        # Nota o Ensayo
 tema: Sistemas    # Sistemas, Tiempo o Ser
-extracto: Una o dos frases para la lista del Cuaderno.
+extracto: Una o dos frases para la lista de Anotaciones.
 ---
 
 Tu texto. Párrafos separados por una línea en blanco.
@@ -29,7 +29,7 @@ Tu texto. Párrafos separados por una línea en blanco.
 El número (N°05, N°06…), el tiempo de lectura, el feed RSS, el mapa del sitio y los archivos para IA (`/llms.txt`, `/llms-full.txt`) se actualizan solos.
 
 **Para corregir** una nota: ábrela en GitHub → ícono del lápiz → edita → Commit.
-**Para despublicar**: bórrala (o muévela fuera de `src/cuaderno/`).
+**Para despublicar**: bórrala (o muévela fuera de `src/anotaciones/`).
 
 ---
 
@@ -86,7 +86,7 @@ Abre http://localhost:8080 — se recarga al guardar.
 ## Estructura
 ```
 src/
-  cuaderno/            ← tus notas (.md)
+  anotaciones/            ← tus notas (.md)
   _data/site.json      ← datos generales
   _data/principios.json
   _includes/           ← plantillas (base, nota, marca, lista)

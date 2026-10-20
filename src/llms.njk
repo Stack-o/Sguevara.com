@@ -6,16 +6,16 @@ eleventyExcludeFromCollections: true
 
 > {{ site.descripcion }}
 
-Sergio Guevara Guitán piensa sobre sistemas, complejidad, tiempo y ser, y lo aplica en organizaciones, equipos y coaching ejecutivo. Tanmayo es su práctica: ABCs para re-pensar y distinguir el "sentido común", más allá del agilismo y la PMO tradicionales. Más de 20 años en gestión de proyectos, gestión de producto, complejidad y experiencia global. Enseña sobre agilidad, cultura y complejidad.
+Sergio Guevara Guitán piensa sobre sistemas, complejidad, tiempo y ser, y lo aplica en organizaciones, equipos y coaching ejecutivo. Tanmayo es su práctica: ABCs para re-pensar y distinguir el "sentido común", más allá del agilismo y la PMO tradicionales. Tanmayo es donde las anotaciones y la experiencia se vuelven acción, construida sobre años de abordar complejidad, proyectos, productos y (re)diseño de organizaciones. Enseña sobre agilidad, cultura y complejidad.
 
 Cómo trabaja: (1) crear distinciones, (2) leer el sistema, (3) diseñar colaboración.
 
-Raíces de su pensamiento: Heidegger, Merleau-Ponty, Varela, Maturana, Evan Thompson, Ricoeur, Bergson, François Jullien (transformaciones silenciosas, propensión) y Safranski (el tiempo).
+Piensa con: Al Shalloway, Bob Marshall, Christopher Alexander, Eli Goldratt, François Jullien (transformaciones silenciosas, propensión) y Rüdiger Safranski (el tiempo); y, más atrás, Heidegger, Merleau-Ponty, Varela, Maturana, Ricoeur y Bergson.
 
 Idioma del sitio: español.
 
-## Cuaderno (notas y ensayos)
-{% for nota in collections.cuaderno | reverse %}
+## Anotaciones (notas y ensayos)
+{% for nota in collections.anotaciones | reverse %}
 - [{{ nota.data.title }}]({{ site.url }}{{ nota.url }}): {{ nota.data.tipo }} sobre {{ nota.data.tema }}. {{ nota.data.extracto }}
 {%- endfor %}
 
