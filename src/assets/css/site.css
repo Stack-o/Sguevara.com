@@ -661,3 +661,16 @@ body.en-tierra .bajar-flotante { background: rgba(42,26,14,.9); border-color: #2
 .mapa-pregunta .icono-mapa { width: 4.8cqw; height: 4.8cqw; }
 @media (prefers-reduced-motion: no-preference) { @supports (animation-timeline: view()) { .revela { animation-range: entry 0% entry 35%; } } }
 .t-trabajo .tarjetas { flex: none; }
+
+/* v5.1 — T inicial con tres puntos, sin línea bajo "En qué ando", volver al inicio */
+.l-primero { border-top: 0; padding-top: 6px; }
+.l-tanmayo { display: inline-flex; align-items: flex-end; }
+.l-tanmayo .t-inicial { width: 1em; height: 1.17em; margin-right: -.12em; margin-bottom: .02em; color: var(--texto); flex: none; overflow: visible; }
+.volver-inicio {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; margin-bottom: 48px;
+  border: 1px solid #8A867F; border-radius: 999px; font-family: var(--mono); font-size: 14px; text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.volver-inicio:hover { background: var(--texto); color: var(--fondo); }
+body.tierra .volver-inicio { border-color: #2A1A0E; }
+body.tierra .volver-inicio:hover { background: #2A1A0E; color: #F3E3CB; }

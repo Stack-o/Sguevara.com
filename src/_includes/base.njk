@@ -29,7 +29,7 @@
     <nav class="menu" aria-label="Principal">
       <a href="/tanmayo/"{% if page.url == '/tanmayo/' %} aria-current="page"{% endif %}>tanmayo</a>
       <a href="/anotaciones/"{% if page.url.startsWith('/anotaciones') %} aria-current="page"{% endif %}>anotaciones</a>
-      <a href="/#libro">el libro</a>
+      <a href="/compas-animico/"{% if page.url == '/compas-animico/' %} aria-current="page"{% endif %}>el Compás Anímico</a>
       <a href="{{ site.linkedin }}">linkedin</a>
     </nav>
   </header>
@@ -39,6 +39,7 @@
   </main>
 
   <footer class="pie envoltura" id="conversemos">
+    {% if page.url != "/" %}<a class="volver-inicio" href="/">← Volver al inicio</a>{% endif %}
     <div class="pie-grande">
       {% set claseMarca = "marca-pie" %}{% include "marca.njk" %}
       <a class="conversemos" href="{{ site.linkedin }}">Conversemos <span class="c-sistemas">↗</span></a>
