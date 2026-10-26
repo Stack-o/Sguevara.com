@@ -1,0 +1,7 @@
+[
+  { "frase": "Cree que si eliges el framework correcto, la cultura cambia sola.", "sergio": false, "porque": "La cultura no se instala: emerge de lo que el sistema hace posible." },
+  { "frase": "Para acelerar un proyecto atrasado, propone agregar más gente al equipo.", "sergio": false, "porque": "Sentido común que no tiene sentido: más gente suele significar más coordinación y más atraso." },
+  { "frase": "Trabaja con mapas hechos de preguntas, no con diagnósticos llenos de respuestas.", "sergio": true, "porque": "Habitar una situación empieza por distinguirla: ¿cómo llegó a ser así? ¿qué podría abrir otra posibilidad?" },
+  { "frase": "Dice que los equipos fallan porque las personas no se esfuerzan lo suficiente.", "sergio": false, "porque": "Casi siempre es el sistema, no el esfuerzo." },
+  { "frase": "Escribió un libro con 20 principios numerados… y después aclaró que no tienen ningún orden.", "sergio": true, "porque": "El Compás Anímico se lee en la dirección que tu compás elija." }
+]

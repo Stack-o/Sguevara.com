@@ -83,3 +83,73 @@
     actualizar();
   }
 })();
+
+// ¿Sergio o no? — juego del inicio. Las frases viven en src/_data/juego.json
+(function () {
+  var caja = document.querySelector("[data-juego]");
+  var datos = document.getElementById("juego-datos");
+  if (!caja || !datos) return;
+  var preguntas = [];
+  try { preguntas = JSON.parse(datos.textContent); } catch (e) { return; }
+  if (!preguntas.length) return;
+  var $ = function (s) { return caja.querySelector(s); };
+  var i = 0, puntos = 0, respondida = false;
+  var mostrar = function () {
+    var q = preguntas[i];
+    $("[data-frase]").textContent = q.frase;
+    $("[data-progreso]").textContent = (i + 1) + " de " + preguntas.length;
+    $("[data-botones]").hidden = false;
+    $("[data-respuesta]").hidden = true;
+    respondida = false;
+  };
+  var elegir = function (esSergio) {
+    if (respondida) return;
+    respondida = true;
+    var q = preguntas[i];
+    var ok = esSergio === q.sergio;
+    if (ok) puntos++;
+    var r = $("[data-respuesta]");
+    r.classList.toggle("fallo", !ok);
+    $("[data-veredicto]").textContent = ok ? "Correcto." : "No.";
+    $("[data-explicacion]").textContent = (q.sergio ? "Eso sí es Sergio. " : "Eso no es Sergio. ") + q.porque;
+    $("[data-siguiente-pregunta]").textContent = i + 1 >= preguntas.length ? "Ver resultado →" : "Siguiente →";
+    $("[data-botones]").hidden = true;
+    r.hidden = false;
+    $("[data-siguiente-pregunta]").focus();
+  };
+  var terminar = function () {
+    var total = preguntas.length;
+    $("[data-jugando]").hidden = true;
+    $("[data-final]").hidden = false;
+    $("[data-puntaje]").textContent = "Acertaste " + puntos + " de " + total;
+    $("[data-mensaje]").textContent = puntos === total
+      ? "Distingues como yo. Ya tenemos de qué hablar."
+      : (puntos >= total - 1 ? "Ya ves el sistema detrás de las respuestas. Falta poco."
+      : "El sentido común te jugó en contra. Para eso existe Tanmayo.");
+  };
+  caja.addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    if (b.hasAttribute("data-elegir")) elegir(b.getAttribute("data-elegir") === "si");
+    else if (b.hasAttribute("data-siguiente-pregunta")) { i++; if (i >= preguntas.length) terminar(); else mostrar(); }
+    else if (b.hasAttribute("data-reiniciar")) { i = 0; puntos = 0; $("[data-final]").hidden = true; $("[data-jugando]").hidden = false; mostrar(); }
+  });
+  mostrar();
+})();
+
+// Página Tanmayo: palabras doradas que se abren
+(function () {
+  document.querySelectorAll("[data-capitulo]").forEach(function (cap) {
+    var caja = cap.querySelector("[data-frase-abierta]");
+    cap.addEventListener("click", function (e) {
+      var chip = e.target.closest(".t-chip");
+      if (!chip) return;
+      var abierto = chip.getAttribute("aria-pressed") === "true";
+      cap.querySelectorAll(".t-chip").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+      if (abierto) { caja.hidden = true; return; }
+      chip.setAttribute("aria-pressed", "true");
+      caja.textContent = chip.getAttribute("data-frase");
+      caja.hidden = false;
+    });
+  });
+})();

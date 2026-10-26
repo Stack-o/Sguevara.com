@@ -48,6 +48,9 @@ El número (N°05, N°06…), el tiempo de lectura, el feed RSS, el mapa del sit
 | Colores (cian ↔ violeta del logo) | Primeras líneas de `src/assets/css/site.css` (`--sistemas`) |
 | Textos del inicio | `src/index.njk` |
 | Los 20 principios | `src/_data/principios.json` |
+| Las frases del juego "¿Sergio o no?" | `src/_data/juego.json` (`sergio: true` o `false`) |
+| Preguntas y palabras doradas de la página Tanmayo | `src/_data/tanmayo.json` |
+| La nota que se resalta en el inicio | en la nota, `destacada: true` (el inicio muestra la más reciente + la destacada) |
 | La T con los tres puntos | `src/_includes/marca.njk` (si tienes el logo original en SVG, reemplaza los trazos ahí) |
 
 ---

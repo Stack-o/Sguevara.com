@@ -27,12 +27,11 @@
       <span>Sergio Guevara</span>
     </a>
     <nav class="menu" aria-label="Principal">
-      <a href="/anotaciones/"{% if page.url.startsWith('/anotaciones') %} aria-current="page"{% endif %}>[ Anotaciones ]</a>
-      <a href="/#tanmayo">[ Tanmayo ]</a>
-      <a href="/compas-animico/"{% if page.url == '/compas-animico/' %} aria-current="page"{% endif %}>[ Compás Anímico ]</a>
-      <a href="/#sobre">[ Sobre mí ]</a>
+      <a href="/tanmayo/"{% if page.url == '/tanmayo/' %} aria-current="page"{% endif %}>tanmayo</a>
+      <a href="/anotaciones/"{% if page.url.startsWith('/anotaciones') %} aria-current="page"{% endif %}>anotaciones</a>
+      <a href="/#libro">el libro</a>
+      <a href="{{ site.linkedin }}">linkedin</a>
     </nav>
-    <a class="enlace-mono" href="/#conversemos">Conversemos ↗</a>
   </header>
 
   <main id="contenido">

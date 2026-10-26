@@ -1,122 +1,162 @@
 ---
 layout: base.njk
-claseCuerpo: inicio
+claseCuerpo: landing
 ---
-<!-- 1 · Inicio -->
-<section class="pantalla hero-p envoltura" id="inicio" data-pantalla>
-  <p class="etiqueta">Anotaciones · sistemas · complejidad · tiempo · ser</p>
-  <h1 class="titular">
-    <span>El sentido común</span>
-    <span class="c-ser">no es común,</span>
-    <span class="c-tiempo">ni tiene sentido.</span>
-  </h1>
-  <div class="hero-abajo">
-    <p class="bajada">Pienso sobre sistemas, complejidad, tiempo y ser. Y lo llevo a organizaciones, equipos y líderes que ya intuyen que <em>la receta</em> no alcanza.</p>
-    <a class="t-bajar" href="#como" data-bajar aria-label="Bajar a la siguiente sección">
-      <svg class="marca marca-orbita" viewBox="0 0 120 140" aria-hidden="true">
-        <g class="orbita o1"><g class="orbita-y"><circle class="punto p1" cx="33" cy="25" r="8.5"></circle></g></g>
-        <g class="orbita o2"><g class="orbita-y"><circle class="punto p2" cx="60" cy="23" r="8.5"></circle></g></g>
-        <g class="orbita o3"><g class="orbita-y"><circle class="punto p3" cx="87" cy="25" r="8.5"></circle></g></g>
-        <path class="trazo" d="M8 58 C18 48 44 44 70 43 C88 42 104 42 114 40 C112 44 108 47 102 48 C82 50 52 52 30 58 C22 60 16 64 12 68 C8 66 6 62 8 58 Z"></path>
-        <path class="trazo" d="M60 46 C66 45 70 47 69 52 C66 76 64 104 62 134 C58 128 55 108 54 84 C53 68 54 54 60 46 Z"></path>
-      </svg>
-    </a>
+{% set notasInicio = collections.anotaciones | ultimaYDestacada %}
+
+<!-- Inicio -->
+<section class="l-hero l-envoltura" id="inicio">
+  <div class="l-hero-texto">
+    <h1 class="l-nombre">Sergio Guevara Guitián</h1>
+    <p class="l-frase">Usando <span class="c-sistemas">distinciones</span> incómodas para abordar el sentido común que <span class="c-ser">no es común</span>, <span class="c-tiempo">ni tiene sentido</span>.</p>
+    <p class="l-bajada">Pienso sobre sistemas, complejidad y cómo los habitamos. Lo convierto en trabajo con ejecutivos, líderes y equipos a través de <strong>Tanmayo</strong>.</p>
+    <p class="l-enlaces"><a href="#tanmayo">qué es tanmayo</a><a href="#libro">el libro</a><a href="#conversemos">conversemos ↗</a></p>
   </div>
+  <picture class="l-avatar">
+    <source srcset="/assets/img/sergio-avatar.webp" type="image/webp">
+    <img src="/assets/img/sergio-avatar.png" alt="Avatar dibujado de Sergio Guevara" width="560" height="560">
+  </picture>
 </section>
 
-<!-- 2 · Cómo trabajo -->
-<section class="pantalla como-p envoltura" id="como" data-pantalla aria-label="Cómo trabajo">
-  <div class="movimientos">
-    <div class="movimiento">
-      <span class="linea f-ser" aria-hidden="true"></span>
-      <h2>Crear distinciones</h2>
-      <p>Nombrar lo que ya está ahí, a simple vista, y nadie estaba viendo.</p>
+<!-- En qué ando -->
+<section class="l-seccion l-envoltura" aria-labelledby="en-que-ando">
+  <p class="etiqueta" id="en-que-ando">En qué ando</p>
+
+  <!-- Tanmayo + mapa nivel 1 -->
+  <div class="l-item" id="tanmayo">
+    <div class="l-item-fila">
+      <h2 class="l-item-titulo l-pincel">Tanmayo</h2>
+      <p class="l-item-texto">Distinciones, sistemas y (re)diseño de colaboración con ejecutivos, líderes y equipos que trabajan en complejidad y con urgencias. Donde el conocimiento de décadas, las anotaciones y la experiencia se vuelven acción.</p>
     </div>
-    <div class="movimiento">
-      <span class="linea f-sistemas" aria-hidden="true"></span>
-      <h2>Leer el sistema</h2>
-      <p>Entender relaciones, restricciones y patrones antes de intervenir.</p>
-    </div>
-    <div class="movimiento">
-      <span class="linea f-tiempo" aria-hidden="true"></span>
-      <h2>Diseñar colaboración</h2>
-      <p>Formas de trabajar que funcionan en contextos complejos, no en diagramas.</p>
+
+    <div class="mapa" aria-label="Mapa Habitar, nivel 1">
+      <!-- Computadora: mapa -->
+      <div class="mapa-lienzo">
+        <svg class="mapa-lineas" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"><path d="M303 193 L415 256 M693 193 L580 256 M498 395 L498 452"></path></svg>
+        <span class="mapa-etiqueta">En tiempo</span>
+        <div class="mapa-pregunta p1">{% set icono = "anillos" %}{% include "iconos-mapa.njk" %}<span>¿Cómo llegó<br>a ser así?</span></div>
+        <div class="mapa-pregunta p2">{% set icono = "piedras" %}{% include "iconos-mapa.njk" %}<span>¿Qué hace que<br>siga siendo así?</span></div>
+        <div class="mapa-pregunta p3">{% set icono = "brote" %}{% include "iconos-mapa.njk" %}<span>¿Qué podría abrir<br>otra posibilidad?</span></div>
+        <div class="mapa-centro"><span class="mapa-habitar">Habitar</span><span class="mapa-sub">navegando y cuidando</span></div>
+      </div>
+      <!-- Teléfono: recorrido vertical -->
+      <div class="mapa-movil">
+        <span class="mapa-etiqueta-m">En tiempo</span>
+        <div class="mapa-centro-m"><span class="mapa-habitar">Habitar</span><span class="mapa-sub">navegando y cuidando</span></div>
+        <span class="mapa-hilo"></span>
+        <div class="mapa-pregunta-m">{% set icono = "anillos" %}{% include "iconos-mapa.njk" %}<span>¿Cómo llegó a ser así?</span></div>
+        <span class="mapa-hilo"></span>
+        <div class="mapa-pregunta-m">{% set icono = "piedras" %}{% include "iconos-mapa.njk" %}<span>¿Qué hace que siga siendo así?</span></div>
+        <span class="mapa-hilo"></span>
+        <div class="mapa-pregunta-m">{% set icono = "brote" %}{% include "iconos-mapa.njk" %}<span>¿Qué podría abrir otra posibilidad?</span></div>
+      </div>
+      <div class="l-mas">
+        <a class="boton-oro" href="/tanmayo/">Quiero más →</a>
+        <span class="mono-suave">Nivel 1 · tres preguntas para habitar una situación</span>
+      </div>
     </div>
   </div>
+
+  <!-- Anotaciones: la última + la destacada -->
+  <div class="l-item" id="anotaciones">
+    <div class="l-item-fila">
+      <h2 class="l-item-titulo"><a href="/anotaciones/">Anotaciones</a></h2>
+      <p class="l-item-texto">Lo que voy notando en sistemas, complejidad y habitabilidad. Notas cortas y algunos artículos y ensayos.</p>
+    </div>
+    <div class="l-notas">
+      {% for n in notasInicio %}
+      <a class="l-nota tema-{{ n.data.tema | slugTema }}" href="{{ n.url }}">
+        <span class="nota-meta"><span class="punto-tema" aria-hidden="true"></span>{% if n.data.destacada %}★ Destacada{% else %}La más reciente{% endif %} · {{ n.data.tema }}</span>
+        <span class="l-nota-titulo">{{ n.data.title }}</span>
+        <span class="l-nota-extracto">{{ n.data.extracto }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="l-mas"><a class="boton-borde-claro" href="/anotaciones/">Quiero más →</a></div>
+  </div>
+
+  <!-- Compás Anímico -->
+  <a class="l-item l-item-enlace" href="#libro">
+    <span class="l-item-fila">
+      <span class="l-item-titulo l-subrayado">Compás Anímico</span>
+      <span class="l-item-texto">Un pequeño libro con 20 principios para navegar tus experiencias sin mapas ajenos. Una excelente manera de iniciarse en el pensamiento Tanmayo.</span>
+    </span>
+  </a>
+
+  <!-- Clases y talleres -->
+  <a class="l-item l-item-enlace l-ultimo" href="#conversemos">
+    <span class="l-item-fila">
+      <span class="l-item-titulo l-subrayado">Clases y talleres</span>
+      <span class="l-item-texto">ABCs y andamios en agilidad, cultura y complejidad, enseñados sin recetas fijas, para que no fallen en tu realidad y puedas desarrollar habilidades a largo plazo.</span>
+    </span>
+  </a>
 </section>
 
-<!-- 3 · Anotaciones -->
-<section class="pantalla envoltura" id="anotaciones" data-pantalla>
-  <div class="seccion-cabeza">
-    <div>
-      <p class="etiqueta">Lo que voy notando</p>
-      <h2 class="titulo-seccion">Anotaciones</h2>
-    </div>
+<!-- Cómo pienso -->
+<section class="l-seccion l-envoltura" aria-labelledby="como-pienso">
+  <p class="etiqueta" id="como-pienso">Cómo pienso</p>
+  <div class="l-pienso">
+    <div><span class="linea f-ser" aria-hidden="true"></span><h3>Distinguir para decidir.</h3><p>Lo que no se nombra, no se puede ver. Y lo que no ves, lo repites en automático.</p></div>
+    <div><span class="linea f-sistemas" aria-hidden="true"></span><h3>El sistema, no las personas.</h3><p>Cuando un equipo se esfuerza y no avanza, casi siempre es la estructura la que habla.</p></div>
+    <div><span class="linea f-tiempo" aria-hidden="true"></span><h3>La propensión, no los estados.</h3><p>No buscamos llegar a un estado ideal: leemos hacia dónde ya se inclina la situación y acompañamos ese movimiento.</p></div>
   </div>
-  {% set notas = collections.anotaciones | paraInicio(5) %}{% set destacarEnLista = true %}
-  {% include "lista-notas.njk" %}
-  <div class="seccion-pie">
-    <a class="enlace-mono" href="/anotaciones/">Todas las anotaciones →</a>
-    <span class="mono-suave">También en <a href="{{ site.linkedin }}">LinkedIn ↗</a> · <a href="/feed.xml">RSS</a></span>
-  </div>
+  <p class="l-linaje">Pienso con Al Shalloway · Bob Marshall · Christopher Alexander · Eli Goldratt · François Jullien · Safranski … y, más atrás, Heidegger · Merleau-Ponty · Varela · Maturana · Ricoeur · Bergson.</p>
 </section>
 
-<!-- 4 · Tanmayo -->
-<section class="pantalla envoltura" id="tanmayo" data-pantalla>
-  <p class="etiqueta">La práctica</p>
-  <h2 class="tanmayo-pincel">Tanmayo</h2>
-  <div class="tanmayo-cuerpo">
-    <div class="tanmayo-texto">
-      <p class="grande">Donde las anotaciones y la experiencia se vuelven acción. Construida sobre años de abordar complejidad, proyectos, productos y (re)diseño de organizaciones.</p>
-      <p class="mono-suave">No es un framework ágil. Son ABCs para re-pensar y distinguir: ver distinto antes de hacer distinto.</p>
-      <a class="boton" href="#conversemos">Conversemos sobre tu contexto ↗</a>
-    </div>
-    <div class="tarjetas">
-      <div class="tarjeta"><span class="raya f-sistemas"></span><h3>Organizaciones</h3><p>Cuando la transformación agregó roles y eventos, pero no mejores resultados.</p></div>
-      <div class="tarjeta"><span class="raya f-tiempo"></span><h3>Equipos</h3><p>Cuando el equipo se esfuerza, pero no avanza.</p></div>
-      <div class="tarjeta"><span class="raya f-ser"></span><h3>Líderes</h3><p>Apoyo ejecutivo para aprender a distinguir y decidir en complejidad, tensión y estrés.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · Compás Anímico -->
-<section id="compas" class="compas pantalla-color" data-pantalla>
-  <div class="envoltura compas-dentro">
-    <a class="compas-portada" href="/compas-animico/"><img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy"></a>
-    <div class="compas-texto">
-      <p class="etiqueta">Libro · 20 principios</p>
-      <h2>El Pequeño Libro del Compás Anímico</h2>
-      <p class="grande cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
-      <p>Cada frase es una semilla. Tiene números, pero no un orden: solo la dirección que tu compás elija.</p>
-      <div class="botones">
-        <a class="boton boton-oscuro" href="/compas-animico/">Explorar los 20 principios</a>
-        {% if site.libroEnlace %}<a class="boton boton-borde" href="{{ site.libroEnlace }}">Conseguir el libro</a>{% endif %}
+<!-- El libro -->
+<section class="l-seccion l-envoltura" id="libro" aria-labelledby="titulo-libro">
+  <p class="etiqueta">El libro</p>
+  <div class="l-libro">
+    {% include "taller.njk" %}
+    <div class="l-libro-fila">
+      <img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy">
+      <div class="l-libro-texto">
+        <h2 id="titulo-libro">El Pequeño Libro del Compás Anímico</h2>
+        <p class="cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
+        <p>20 principios. Tienen números, pero no un orden: solo la dirección que tu compás elija.</p>
+        <div class="botones">
+          <a class="boton boton-oscuro" href="/compas-animico/">Explorar los 20 principios</a>
+          <a class="boton boton-borde" href="{{ site.libroEnlace }}">Conseguir el libro ↗</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6 · Sobre mí -->
-<section id="sobre" class="pantalla envoltura sobre" data-pantalla>
-  <div class="sobre-foto">
-    <p class="etiqueta">Sobre mí</p>
-    {% if site.foto %}
-    <img src="{{ site.foto }}" alt="Sergio Guevara" width="800" height="1000" loading="lazy">
-    {% else %}
-    <div class="foto-vacia">[ tu foto ]<br>súbela a src/assets/img/ y escribe su ruta en site.json → "foto"</div>
-    {% endif %}
-  </div>
-  <div class="sobre-texto">
-    <p class="grande">Soy Sergio Guevara. Más de 20 años en proyectos, productos y transformaciones. Hoy acompaño a una organización financiera compleja, enseño sobre agilidad, cultura y complejidad, y escribo, facilito talleres y construyo comunidad.</p>
-    <p>Creo en el cambio como lo describe Jullien: transformaciones silenciosas, propensión antes que plan.</p>
-    <div class="linaje">
-      <p class="etiqueta">Pienso con</p>
-      <p class="mono">Al Shalloway · Bob Marshall · Christopher Alexander · Eli Goldratt · François Jullien · Safranski</p>
-      <p class="mono suave-linaje">…y, mucho más atrás, Heidegger · Merleau-Ponty · Varela · Maturana · Ricoeur · Bergson · ¡y más!</p>
+<!-- ¿Sergio o no? -->
+<section class="l-seccion l-envoltura" aria-labelledby="titulo-juego">
+  <div class="juego" data-juego>
+    <div class="juego-cuerpo">
+      <h2 id="titulo-juego">¿Sergio o no?</h2>
+      <div data-jugando>
+        <p class="juego-frase" data-frase aria-live="polite"></p>
+        <div class="juego-botones" data-botones>
+          <button type="button" data-elegir="si">Sergio</button>
+          <button type="button" data-elegir="no">No es Sergio</button>
+        </div>
+        <div class="juego-respuesta" data-respuesta hidden>
+          <p><strong data-veredicto></strong> <span data-explicacion></span></p>
+          <button type="button" class="juego-siguiente" data-siguiente-pregunta>Siguiente →</button>
+        </div>
+        <p class="juego-progreso" data-progreso></p>
+      </div>
+      <div data-final hidden>
+        <p class="juego-progreso" data-puntaje></p>
+        <p class="juego-mensaje" data-mensaje></p>
+        <div class="juego-botones">
+          <a class="boton-fucsia" href="#conversemos">Conversemos sobre tu contexto ↗</a>
+          <button type="button" data-reiniciar>Jugar otra vez</button>
+        </div>
+      </div>
+      <noscript><p>Este juego necesita JavaScript.</p></noscript>
     </div>
+    <svg class="marca marca-orbita juego-marca" viewBox="0 0 120 140" aria-hidden="true">
+      <g class="orbita o1"><g class="orbita-y"><circle class="punto p1" cx="33" cy="25" r="8.5"></circle></g></g>
+      <g class="orbita o2"><g class="orbita-y"><circle class="punto p2" cx="60" cy="23" r="8.5"></circle></g></g>
+      <g class="orbita o3"><g class="orbita-y"><circle class="punto p3" cx="87" cy="25" r="8.5"></circle></g></g>
+      <path class="trazo" d="M8 58 C18 48 44 44 70 43 C88 42 104 42 114 40 C112 44 108 47 102 48 C82 50 52 52 30 58 C22 60 16 64 12 68 C8 66 6 62 8 58 Z"></path>
+      <path class="trazo" d="M60 46 C66 45 70 47 69 52 C66 76 64 104 62 134 C58 128 55 108 54 84 C53 68 54 54 60 46 Z"></path>
+    </svg>
   </div>
+  <script type="application/json" id="juego-datos">{{ juego | dump | safe }}</script>
 </section>
-
-<button type="button" class="bajar-flotante" data-siguiente aria-label="Ir a la siguiente sección">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"></path></svg>
-</button>

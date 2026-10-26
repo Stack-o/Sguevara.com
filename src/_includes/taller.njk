@@ -1,0 +1,95 @@
+{# Escena animada: el taller medieval del Compás Anímico #}
+<svg class="taller" viewBox="0 0 1200 420" width="100%" role="img" aria-label="Un taller medieval: una rueda de agua mueve una prensa donde artesanos prensan el libro del Compás Anímico y cuelgan sus páginas a secar">
+        <!-- cielo de papel y suelo -->
+        <rect x="0" y="0" width="1200" height="420" fill="#E7C08A"></rect>
+        <path d="M0 362 L1200 362" stroke="#2A1A0E" stroke-width="3"></path>
+        <path d="M0 372 L1200 372" stroke="#2A1A0E" stroke-width="1" stroke-dasharray="4 10" opacity=".5"></path>
+        <!-- sol / compás de fondo -->
+        <circle cx="1040" cy="78" r="44" fill="#C8902C" opacity=".55"></circle>
+        <!-- agua -->
+        <path d="M40 330 Q70 318 100 330 T160 330 T220 330 T280 330" fill="none" stroke="#3E5A3A" stroke-width="5" stroke-dasharray="20 4" style="animation: agua 1.6s linear infinite"></path>
+        <path d="M40 346 Q70 334 100 346 T160 346 T220 346 T280 346" fill="none" stroke="#3E5A3A" stroke-width="4" stroke-dasharray="14 10" opacity=".7" style="animation: agua 2.2s linear infinite"></path>
+        <!-- rueda de agua -->
+        <g style="transform-box: view-box; transform-origin: 170px 240px; animation: girar 9s linear infinite">
+          <circle cx="170" cy="240" r="96" fill="none" stroke="#2A1A0E" stroke-width="7"></circle>
+          <circle cx="170" cy="240" r="78" fill="none" stroke="#2A1A0E" stroke-width="2"></circle>
+          <circle cx="170" cy="240" r="16" fill="#A4471C" stroke="#2A1A0E" stroke-width="4"></circle>
+          <g stroke="#2A1A0E" stroke-width="5">
+            <path d="M170 144 L170 336"></path><path d="M74 240 L266 240"></path>
+            <path d="M102 172 L238 308"></path><path d="M238 172 L102 308"></path>
+          </g>
+          <g fill="#A4471C" stroke="#2A1A0E" stroke-width="2">
+            <rect x="160" y="132" width="20" height="22"></rect><rect x="160" y="326" width="20" height="22"></rect>
+            <rect x="62" y="230" width="22" height="20"></rect><rect x="256" y="230" width="22" height="20"></rect>
+          </g>
+        </g>
+        <!-- eje hacia la prensa -->
+        <rect x="186" y="234" width="320" height="12" fill="#2A1A0E"></rect>
+        <!-- prensa -->
+        <rect x="506" y="112" width="26" height="250" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="3"></rect>
+        <rect x="688" y="112" width="26" height="250" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="3"></rect>
+        <rect x="490" y="92" width="240" height="30" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="3"></rect>
+        <rect x="604" y="122" width="12" height="88" fill="#2A1A0E"></rect>
+        <path d="M604 134 L616 140 M604 150 L616 156 M604 166 L616 172 M604 182 L616 188" stroke="#E7C08A" stroke-width="2"></path>
+        <g style="animation: prensar 3s ease-in-out infinite">
+          <rect x="550" y="208" width="120" height="20" fill="#A4471C" stroke="#2A1A0E" stroke-width="3"></rect>
+        </g>
+        <!-- el libro bajo la prensa, con los colores del Compás -->
+        <rect x="556" y="232" width="108" height="44" fill="#C8902C" stroke="#2A1A0E" stroke-width="3"></rect>
+        <path d="M556 254 L664 254" stroke="#A4471C" stroke-width="6"></path>
+        <circle cx="610" cy="254" r="10" fill="#3E5A3A" stroke="#2A1A0E" stroke-width="2"></circle>
+        <rect x="530" y="276" width="160" height="16" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="3"></rect>
+        <!-- palanca -->
+        <g style="transform-box: view-box; transform-origin: 610px 170px; animation: palanca 3s ease-in-out infinite">
+          <rect x="470" y="165" width="280" height="10" rx="4" fill="#2A1A0E"></rect>
+        </g>
+        <!-- artesano 1 empuja la palanca -->
+        <g style="animation: empujar 3s ease-in-out infinite">
+          <g transform="translate(446 362) scale(1.5)">
+            <path d="M-9 0 L-7 -24 M9 0 L7 -24" stroke="#2A1A0E" stroke-width="4" stroke-linecap="round"></path>
+            <path d="M-16 -62 L16 -62 L22 -22 L-22 -22 Z" fill="#3E5A3A" stroke="#2A1A0E" stroke-width="2.5"></path>
+            <path d="M-18 -36 L18 -36" stroke="#C8902C" stroke-width="3"></path>
+            <path d="M8 -54 L20 -76" stroke="#2A1A0E" stroke-width="4" stroke-linecap="round"></path>
+            <circle cx="0" cy="-72" r="8" fill="#F3E3CB" stroke="#2A1A0E" stroke-width="2"></circle>
+            <path d="M-12 -66 C-14 -86 14 -90 12 -66 L16 -60 L-16 -60 Z" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="2.5"></path>
+          </g>
+        </g>
+        <!-- páginas que salen volando de la prensa hacia el tendedero -->
+        <g fill="#F3E3CB" stroke="#2A1A0E" stroke-width="2">
+          <rect x="676" y="236" width="24" height="30" style="transform-box: fill-box; animation: volar 4s ease-out infinite"></rect>
+          <rect x="676" y="236" width="24" height="30" style="transform-box: fill-box; animation: volar 4s ease-out 1.3s infinite"></rect>
+          <rect x="676" y="236" width="24" height="30" style="transform-box: fill-box; animation: volar 4s ease-out 2.6s infinite"></rect>
+        </g>
+        <!-- tendedero con principios secándose -->
+        <path d="M770 132 Q960 168 1150 128" fill="none" stroke="#2A1A0E" stroke-width="2.5"></path>
+        <rect x="764" y="122" width="10" height="240" fill="#5C3A1E"></rect>
+        <rect x="1146" y="118" width="10" height="244" fill="#5C3A1E"></rect>
+        <g stroke="#2A1A0E" stroke-width="2">
+          <g style="transform-box: fill-box; transform-origin: 50% 0; animation: mecer 3.2s ease-in-out infinite"><rect x="812" y="140" width="30" height="40" fill="#F3E3CB"></rect><path d="M818 152 L836 152 M818 160 L836 160 M818 168 L830 168" stroke-width="1.5"></path></g>
+          <g style="transform-box: fill-box; transform-origin: 50% 0; animation: mecer 3.6s ease-in-out -1s infinite"><rect x="876" y="148" width="30" height="40" fill="#A4471C"></rect><text x="891" y="174" font-family="IBM Plex Mono, monospace" font-size="14" fill="#F3E3CB" text-anchor="middle" stroke="none">5</text></g>
+          <g style="transform-box: fill-box; transform-origin: 50% 0; animation: mecer 3.1s ease-in-out -2s infinite"><rect x="940" y="152" width="30" height="40" fill="#F3E3CB"></rect><path d="M946 164 L964 164 M946 172 L964 172 M946 180 L958 180" stroke-width="1.5"></path></g>
+          <g style="transform-box: fill-box; transform-origin: 50% 0; animation: mecer 3.8s ease-in-out -.5s infinite"><rect x="1004" y="150" width="30" height="40" fill="#3E5A3A"></rect><text x="1019" y="176" font-family="IBM Plex Mono, monospace" font-size="14" fill="#F3E3CB" text-anchor="middle" stroke="none">9</text></g>
+          <g style="transform-box: fill-box; transform-origin: 50% 0; animation: mecer 3.3s ease-in-out -1.6s infinite"><rect x="1068" y="142" width="30" height="40" fill="#C8902C"></rect><text x="1083" y="168" font-family="IBM Plex Mono, monospace" font-size="14" fill="#2A1A0E" text-anchor="middle" stroke="none">19</text></g>
+        </g>
+        <!-- artesana 2 lleva un fajo de páginas -->
+        <g style="animation: caminar 14s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%">
+          <g transform="translate(800 362) scale(1.35)">
+            <g style="animation: paso .7s ease-in-out infinite">
+              <path d="M-8 0 L-6 -22 M8 0 L6 -22" stroke="#2A1A0E" stroke-width="4" stroke-linecap="round"></path>
+              <path d="M-15 -60 L15 -60 L24 -20 L-24 -20 Z" fill="#A4471C" stroke="#2A1A0E" stroke-width="2.5"></path>
+              <rect x="6" y="-62" width="26" height="22" fill="#F3E3CB" stroke="#2A1A0E" stroke-width="2"></rect>
+              <path d="M6 -56 L32 -56 M6 -50 L32 -50" stroke="#2A1A0E" stroke-width="1.2"></path>
+              <circle cx="0" cy="-70" r="8" fill="#F3E3CB" stroke="#2A1A0E" stroke-width="2"></circle>
+              <path d="M-12 -64 C-14 -84 14 -88 12 -64 L15 -58 L-15 -58 Z" fill="#C8902C" stroke="#2A1A0E" stroke-width="2.5"></path>
+            </g>
+          </g>
+        </g>
+        <!-- artesano 3 cuelga una página -->
+        <g transform="translate(1110 362) scale(1.4)">
+          <path d="M-8 0 L-6 -22 M8 0 L6 -22" stroke="#2A1A0E" stroke-width="4" stroke-linecap="round"></path>
+          <path d="M-15 -60 L15 -60 L22 -20 L-22 -20 Z" fill="#5C3A1E" stroke="#2A1A0E" stroke-width="2.5"></path>
+          <path d="M-10 -56 L-22 -100" stroke="#2A1A0E" stroke-width="4" stroke-linecap="round"></path>
+          <circle cx="0" cy="-70" r="8" fill="#F3E3CB" stroke="#2A1A0E" stroke-width="2"></circle>
+          <path d="M-12 -64 C-14 -84 14 -88 12 -64 L15 -58 L-15 -58 Z" fill="#3E5A3A" stroke="#2A1A0E" stroke-width="2.5"></path>
+        </g>
+      </svg>

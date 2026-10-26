@@ -1,0 +1,47 @@
+{
+  "capitulos": [
+    {
+      "n": "01", "icono": "anillos",
+      "pregunta": "¿Cómo llegó a ser así?",
+      "intro": "Toda situación tiene una trayectoria. Antes de querer cambiarla, conviene ver qué la trajo hasta aquí.",
+      "grupos": [
+        { "titulo": "Lo que viene operando", "nota": "y más: narrativas, habitus, clima…",
+          "items": [
+            { "nombre": "Cuerpo", "frase": "Lo que el cuerpo recuerda antes de que la mente lo nombre." },
+            { "nombre": "Historia", "frase": "Nada empieza hoy: cada situación trae su trayectoria." },
+            { "nombre": "Relaciones", "frase": "No hay partes sueltas: hay vínculos que sostienen y limitan." }
+          ] }
+      ]
+    },
+    {
+      "n": "02", "icono": "piedras",
+      "pregunta": "¿Qué hace que siga siendo así?",
+      "intro": "Lo que persiste no es pura inercia: algo lo está sosteniendo.",
+      "grupos": [
+        { "titulo": "Lo que se conserva", "nota": "continuar no es quedarse igual",
+          "items": [
+            { "nombre": "Continuidad", "frase": "Continuar no es quedarse igual." },
+            { "nombre": "Estabilización", "frase": "Lo que se repite hasta parecer natural." }
+          ] }
+      ]
+    },
+    {
+      "n": "03", "icono": "brote",
+      "pregunta": "¿Qué podría abrir otra posibilidad?",
+      "intro": "El cambio no se impone: se cultiva desde lo que ya está ocurriendo y hacia donde la situación ya se inclina.",
+      "grupos": [
+        { "titulo": "Lo que ocurre", "nota": "",
+          "items": [
+            { "nombre": "Perturbación", "frase": "Algo irrumpe y el sistema ya no puede seguir igual." },
+            { "nombre": "Afectación · Diferenciación", "frase": "Lo que nos afecta, y cómo cada uno responde distinto." },
+            { "nombre": "Reorganización", "frase": "El sistema busca una nueva forma de sostenerse." }
+          ] },
+        { "titulo": "Lo que inclina", "nota": "tiende, sin estar decidido",
+          "items": [
+            { "nombre": "Propensiones", "frase": "Hacia dónde ya se inclina la situación, sin estar decidido." },
+            { "nombre": "Potenciales", "frase": "Lo que todavía no es, pero el contexto hace posible." }
+          ] }
+      ]
+    }
+  ]
+}

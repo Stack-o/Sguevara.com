@@ -1,0 +1,8 @@
+{# Íconos del mapa Habitar. Usa la variable `icono`: anillos | piedras | brote #}
+{% if icono == "anillos" %}
+<svg class="icono-mapa" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="19"></circle><circle class="oro" cx="24" cy="24" r="13"></circle><circle cx="24" cy="24" r="7"></circle><circle class="oro" cx="24" cy="24" r="2.5"></circle><path d="M30 6 L28 12"></path></svg>
+{% elif icono == "piedras" %}
+<svg class="icono-mapa" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="12" rx="6" ry="4"></ellipse><ellipse class="oro" cx="24" cy="22" rx="9" ry="5"></ellipse><ellipse cx="24" cy="33" rx="12" ry="6"></ellipse><path d="M6 41 L42 41"></path></svg>
+{% else %}
+<svg class="icono-mapa" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42 L24 24"></path><path class="oro" d="M24 26 C18 26 12 22 12 16 C18 16 24 20 24 26 Z"></path><path d="M24 22 C26 14 32 10 38 10 C38 18 32 22 24 22 Z"></path><path d="M8 42 L40 42"></path></svg>
+{% endif %}

@@ -51,6 +51,15 @@ export default function (eleventyConfig) {
     return dest.concat(resto).slice(0, n);
   });
 
+  // Inicio (landing): la más reciente + la destacada más reciente (si existe y es otra)
+  eleventyConfig.addFilter("ultimaYDestacada", (arr) => {
+    const todas = (arr || []).slice().reverse();
+    if (!todas.length) return [];
+    const ultima = todas[0];
+    const dest = todas.find((p) => p.data.destacada === true && p !== ultima);
+    return dest ? [ultima, dest] : [ultima];
+  });
+
   // Etiquetas: acepta lista [a, b] o texto "a, b"; devuelve lista limpia
   eleventyConfig.addFilter("listaEtiquetas", (e) => {
     if (!e) return [];

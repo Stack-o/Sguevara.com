@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: Tanmayo
+permalink: /tanmayo/
+claseCuerpo: landing pagina-tanmayo
+descripcion: Tanmayo no llega con respuestas. Llega con tres preguntas para habitar lo que está pasando en tu organización, tu equipo o tu liderazgo.
+---
+<section class="t-apertura l-envoltura">
+  <p class="mapa-etiqueta-texto">En tiempo · somos tiempo · vivimos según tiempos · ritmo</p>
+  <h1 class="l-pincel t-titulo">Tanmayo</h1>
+  <p class="l-frase">No llegamos con respuestas. Llegamos con tres preguntas para <span class="c-oro">habitar</span> lo que está pasando.</p>
+  <div class="t-apertura-fila">
+    <div class="mapa-centro-m late"><span class="mapa-habitar">Habitar</span><span class="mapa-sub">navegando y cuidando</span></div>
+    <p class="mono-suave">Baja despacio. Toca cualquier palabra dorada para abrirla. ↓</p>
+  </div>
+</section>
+
+{% for cap in tanmayo.capitulos %}
+<section class="t-capitulo l-envoltura revela" data-capitulo>
+  <div class="t-capitulo-pregunta">
+    <span class="t-n">{{ cap.n }}</span>
+    <div class="t-pregunta-fila">
+      {% set icono = cap.icono %}{% include "iconos-mapa.njk" %}
+      <h2>{{ cap.pregunta }}</h2>
+    </div>
+    <p class="t-intro">{{ cap.intro }}</p>
+  </div>
+  <div class="t-capitulo-grupos">
+    {% for g in cap.grupos %}
+    <div class="t-grupo">
+      <span class="mapa-etiqueta-texto">{{ g.titulo }}</span>
+      <div class="t-chips">
+        {% for it in g.items %}
+        <button type="button" class="t-chip" aria-pressed="false" data-frase="{{ it.frase }}">{{ it.nombre }}</button>
+        {% endfor %}
+      </div>
+      {% if g.nota %}<span class="t-nota">{{ g.nota }}</span>{% endif %}
+    </div>
+    {% endfor %}
+    <p class="t-frase" data-frase-abierta hidden></p>
+  </div>
+</section>
+{% endfor %}
+
+<section class="t-mapa l-envoltura revela">
+  <p class="mapa-etiqueta-texto">El mapa completo · nivel 2</p>
+  <div class="t-mapa-caja">
+    <div class="t-mapa-lado">
+      <div><span class="mapa-etiqueta-texto">Lo que viene operando</span><span class="t-mapa-items">Cuerpo · Historia · Relaciones</span><span class="t-nota">y más: narrativas, habitus, clima…</span></div>
+      <div><span class="mapa-etiqueta-texto">Lo que ocurre</span><span class="t-mapa-items">Perturbación · Afectación · Diferenciación · Reorganización</span></div>
+    </div>
+    <div class="t-mapa-centro">
+      <div class="mapa-centro-m grande late"><span class="mapa-habitar">Habitar</span><span class="mapa-sub">navegando y cuidando</span></div>
+      <span class="t-nota centrada">el habitante: distinguible, no separable del campo</span>
+    </div>
+    <div class="t-mapa-lado derecha">
+      <div><span class="mapa-etiqueta-texto">Lo que se conserva</span><span class="t-mapa-items">Continuidad · Estabilización</span><span class="t-nota">continuar no es quedarse igual</span></div>
+      <div><span class="mapa-etiqueta-texto">Lo que inclina</span><span class="t-mapa-items">Propensiones · Potenciales</span><span class="t-nota">tiende, sin estar decidido</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="t-trabajo l-envoltura revela">
+  <h2>Cómo se vuelve trabajo</h2>
+  <div class="tarjetas">
+    <div class="tarjeta"><span class="raya f-sistemas"></span><h3>Tanmayo embebido</h3><p>Acompaño desde dentro de tu contexto real, con las urgencias de siempre, usando estas preguntas para distinguir y decidir.</p></div>
+    <div class="tarjeta"><span class="raya f-ser"></span><h3>Apoyo ejecutivo</h3><p>Para aprender a distinguir y decidir en complejidad, tensión y estrés.</p></div>
+    <div class="tarjeta"><span class="raya f-tiempo"></span><h3>Clases y talleres</h3><p>ABCs y andamios en agilidad, cultura y complejidad, sin recetas fijas.</p></div>
+  </div>
+  <p class="l-frase t-resuena">¿Alguna de las tres preguntas te quedó resonando?</p>
+</section>
