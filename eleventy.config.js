@@ -16,7 +16,7 @@ export default function (eleventyConfig) {
       title: "Anotaciones — Sergio Guevara",
       subtitle: "Sistemas, complejidad, tiempo y ser.",
       base: "https://sguevara.com/",
-      author: { name: "Sergio Guevara Guitán" },
+      author: { name: "Sergio Guevara Guitián" },
     },
   });
 

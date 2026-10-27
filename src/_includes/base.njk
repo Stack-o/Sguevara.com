@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% set tituloPagina = (title + " — " + site.titulo) if title else (site.titulo + " — Anotaciones") %}
+  {% set tituloPagina = (title + " — " + site.titulo) if title else (site.titulo + " — Tanmayo y anotaciones") %}
   <title>{{ tituloPagina }}</title>
   <meta name="description" content="{{ extracto or descripcion or site.descripcion }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
@@ -11,7 +11,9 @@
   <meta property="og:description" content="{{ extracto or descripcion or site.descripcion }}">
   <meta property="og:type" content="{{ 'article' if tipo else 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.url }}/assets/img/compas-portada.jpg">
+  <meta property="og:image" content="{{ site.url }}/assets/img/{{ imagenCompartir or 'compartir.png' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0B0B0C">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -42,7 +44,7 @@
     {% if page.url != "/" %}<a class="volver-inicio" href="/">← Volver al inicio</a>{% endif %}
     <div class="pie-grande">
       {% set claseMarca = "marca-pie" %}{% include "marca.njk" %}
-      <a class="conversemos" href="{{ site.linkedin }}">Conversemos <span class="c-sistemas">↗</span></a>
+      <a class="conversemos" href="{{ site.linkedin }}">Sigamos la conversación en LinkedIn <span class="c-sistemas">↗</span></a>
     </div>
     <div class="pie-linea">
       <span>{{ site.autor }} · sguevara.com</span>

@@ -9,7 +9,8 @@ claseCuerpo: landing
   <div class="l-hero-texto">
     <h1 class="l-nombre">Sergio Guevara Guitián</h1>
     <p class="l-frase">Usando <span class="c-sistemas">distinciones</span> incómodas para abordar el sentido común que <span class="c-ser">no es común</span>, <span class="c-tiempo">ni tiene sentido</span>.</p>
-    <p class="l-bajada">Pienso sobre sistemas, complejidad y cómo habitamos. Lo convierto en trabajo con ejecutivos, líderes y equipos a través de <strong>Tanmayo</strong>.</p>
+    <p class="l-bajada">Pienso sobre sistemas, complejidad y cómo los habitamos. Lo exploro y lo comparto a través de <strong>Tanmayo</strong> y mis anotaciones.</p>
+  </div>
   <picture class="l-avatar">
     <source srcset="/assets/img/sergio-avatar.webp" type="image/webp">
     <img src="/assets/img/sergio-avatar.png" alt="Avatar dibujado de Sergio Guevara" width="560" height="560">
@@ -18,7 +19,7 @@ claseCuerpo: landing
 
 <!-- Cómo pienso -->
 <section class="l-seccion l-envoltura" aria-labelledby="como-pienso">
-  <p class="etiqueta" id="como-pienso">Cómo pienso</p>
+  <h2 class="etiqueta" id="como-pienso">Cómo pienso</h2>
   <div class="l-pienso">
     <div><span class="linea f-ser" aria-hidden="true"></span><h3>Distinguir para decidir.</h3><p>Lo que no se nombra, no se puede ver. Y lo que no ves, lo repites en automático.</p></div>
     <div><span class="linea f-sistemas" aria-hidden="true"></span><h3>El sistema, no las personas.</h3><p>Cuando un equipo se esfuerza y no avanza, casi siempre es la estructura la que habla.</p></div>
@@ -29,13 +30,13 @@ claseCuerpo: landing
 
 <!-- En qué ando -->
 <section class="l-seccion l-envoltura" aria-labelledby="en-que-ando">
-  <p class="etiqueta" id="en-que-ando">En qué ando</p>
+  <h2 class="etiqueta" id="en-que-ando">En qué ando</h2>
 
   <!-- Tanmayo + mapa nivel 1 -->
   <div class="l-item l-primero" id="tanmayo">
     <div class="l-item-fila">
-      <h2 class="l-item-titulo l-pincel l-tanmayo" aria-label="Tanmayo">{% include "t-inicial.njk" %}<span aria-hidden="true">anmayo</span></h2>
-      <p class="l-item-texto">Distinciones, sistemas y (re)diseño de colaboración con ejecutivos, líderes y equipos que trabajan en complejidad y con urgencias. Donde el conocimiento de décadas, las anotaciones y la experiencia se vuelven acción.</p>
+      <h3 class="l-item-titulo l-pincel l-tanmayo"><span class="sr-only">Tanmayo</span>{% include "t-inicial.njk" %}<span class="resto-palabra" data-resto="anmayo" aria-hidden="true"></span></h3>
+      <p class="l-item-texto">Andamios para distinguir, leer sistemas y (re)diseñar colaboración en complejidad. Donde el conocimiento de décadas, las anotaciones y la experiencia se vuelven acción.</p>
     </div>
 
     <div class="mapa" aria-label="Mapa Habitar, nivel 1">
@@ -69,7 +70,7 @@ claseCuerpo: landing
   <!-- Anotaciones: la última + la destacada -->
   <div class="l-item" id="anotaciones">
     <div class="l-item-fila">
-      <h2 class="l-item-titulo"><a href="/anotaciones/">Anotaciones</a></h2>
+      <h3 class="l-item-titulo"><a href="/anotaciones/">Anotaciones</a></h3>
       <p class="l-item-texto">Lo que voy notando en sistemas, complejidad y habitabilidad. Notas cortas y algunos artículos y ensayos.</p>
     </div>
     <div class="l-notas">
@@ -93,10 +94,10 @@ claseCuerpo: landing
   </a>
 
   <!-- ABC's -->
-  <a class="l-item l-item-enlace l-ultimo" href="#conversemos">
+  <a class="l-item l-item-enlace l-ultimo" href="/tanmayo/">
     <span class="l-item-fila">
-      <span class="l-item-titulo l-subrayado">ABC's</span>
-      <span class="l-item-texto">ABC's, gu[ias y andamios para comprender agilidad, cultura y complejidad, para navegar sin recetas fijas, y facilitar que puedas aplicarlos en tu realidad y desarrollar habilidades a largo plazo.</span>
+      <span class="l-item-titulo l-subrayado">Los ABC</span>
+      <span class="l-item-texto">ABC, guías y andamios para comprender agilidad, cultura y complejidad, para navegar sin recetas fijas, y facilitar que puedas aplicarlos en tu realidad y desarrollar habilidades a largo plazo.</span>
     </span>
   </a>
 </section>
@@ -107,7 +108,7 @@ claseCuerpo: landing
   <div class="l-libro">
     {% include "taller.njk" %}
     <div class="l-libro-fila">
-      <img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy">
+      <picture><source srcset="/assets/img/compas-portada.webp" type="image/webp"><img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048" loading="lazy"></picture>
       <div class="l-libro-texto">
         <h2 id="titulo-libro">El Pequeño Libro del Compás Anímico</h2>
         <p class="cursiva">Para navegar tus experiencias no necesitas mapas ajenos… necesitas un compás propio.</p>
@@ -142,7 +143,8 @@ claseCuerpo: landing
         <p class="juego-progreso" data-puntaje></p>
         <p class="juego-mensaje" data-mensaje></p>
         <div class="juego-botones">
-          <a class="boton-fucsia" href="#conversemos">Conversemos sobre tu contexto ↗</a>
+          <a class="boton-fucsia" href="/tanmayo/">Explorar Tanmayo →</a>
+          <a class="boton-borde-claro" href="/anotaciones/">Leer anotaciones →</a>
           <button type="button" data-reiniciar>Jugar otra vez</button>
         </div>
       </div>

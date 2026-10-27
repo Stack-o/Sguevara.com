@@ -3,6 +3,7 @@ layout: base.njk
 title: El Pequeño Libro del Compás Anímico
 permalink: /compas-animico/
 claseCuerpo: tierra
+imagenCompartir: compas-portada.jpg
 descripcion: Veinte principios para navegar tus experiencias con un compás propio. Un libro de Sergio Guevara.
 ---
 <section class="compas-hero envoltura">
@@ -13,7 +14,7 @@ descripcion: Veinte principios para navegar tus experiencias con un compás prop
     <p>Cada frase de este libro es una semilla. Algunas están listas para germinar ahora. Otras, cuando el terreno esté listo. Aunque tiene números, no hay un orden específico: solo la dirección que tu compás elija.</p>
     {% if site.libroEnlace %}<a class="boton boton-oscuro" href="{{ site.libroEnlace }}">Conseguir el libro</a>{% endif %}
   </div>
-  <img class="compas-hero-img" src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048">
+  <picture class="compas-hero-img"><source srcset="/assets/img/compas-portada.webp" type="image/webp"><img src="/assets/img/compas-portada.jpg" alt="Portada de El Pequeño Libro del Compás Anímico" width="1358" height="1048"></picture>
 </section>
 
 <section class="envoltura principios-seccion" aria-labelledby="principios-t">
