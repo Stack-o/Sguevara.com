@@ -8,6 +8,9 @@ export default function (eleventyConfig) {
   // Libro interactivo del Compás Anímico (página autónoma) → /compas-animico/libro/
   eleventyConfig.addPassthroughCopy({ "src/_libro-compas": "compas-animico/libro" });
   eleventyConfig.ignores.add("src/_libro-compas/**");
+  // Lecturas: El jardinero de Tagore (página autónoma) → /lecturas/el-jardinero/
+  eleventyConfig.addPassthroughCopy({ "src/_lecturas-jardinero": "lecturas/el-jardinero" });
+  eleventyConfig.ignores.add("src/_lecturas-jardinero/**");
 
   // Feed RSS/Atom de Anotaciones → /feed.xml
   eleventyConfig.addPlugin(feedPlugin, {
