@@ -5,6 +5,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  // Libro interactivo del Compás Anímico (página autónoma) → /compas-animico/libro/
+  eleventyConfig.addPassthroughCopy({ "src/_libro-compas": "compas-animico/libro" });
+  eleventyConfig.ignores.add("src/_libro-compas/**");
 
   // Feed RSS/Atom de Anotaciones → /feed.xml
   eleventyConfig.addPlugin(feedPlugin, {
