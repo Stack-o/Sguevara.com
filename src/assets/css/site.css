@@ -688,3 +688,25 @@ h2.etiqueta { font-size: 13px; font-weight: 400; margin: 0 0 12px; }
 picture.compas-hero-img { display: block; }
 picture.compas-hero-img img { width: 100%; display: block; }
 .resto-palabra::after { content: attr(data-resto); }
+
+/* Lecturas: El jardinero (papel recortado) */
+.l-jardin { --papel:#EFE5D0; background:var(--papel); color:#221E1A; border-radius:18px; overflow:hidden; display:flex; flex-wrap:wrap; align-items:center; gap:40px; padding:36px; }
+.l-jardin a { color:#221E1A; }
+.l-jardin .boton-oscuro { background:#221E1A; border-color:#221E1A; color:#F3E9D2; }
+.l-jardin .boton-borde { border-color:#221E1A; color:#221E1A; }
+.l-jardin-img { flex:0 1 330px; min-width:0; display:block; transform:rotate(-1.5deg); transition:transform .3s; }
+.l-jardin-img:hover { transform:rotate(0deg) translateY(-4px); }
+.l-jardin-img img { width:100%; height:auto; display:block; filter:drop-shadow(3px 8px 10px rgba(60,38,14,.32)); }
+.l-jardin-texto { flex:1 1 360px; min-width:0; display:flex; flex-direction:column; gap:16px; }
+.l-jardin-texto h2 { margin:0; font-family:var(--serif); font-weight:600; font-size:clamp(32px,3.8vw,48px); line-height:1.05; }
+.l-jardin-texto h2 span { color:#A55F12; }
+.l-jardin-texto p { margin:0; font-size:19px; line-height:1.5; }
+.l-jardin-texto .cursiva { font-style:italic; font-size:21px; line-height:1.4; }
+.l-jardin-cantero { display:block; background:#E6D6B5; padding:14px 12px 6px; clip-path:polygon(0 3px,8% 0,17% 4px,28% 1px,39% 5px,51% 0,63% 4px,74% 1px,86% 5px,94% 1px,100% 4px,calc(100% - 3px) 50%,100% calc(100% - 2px),88% 100%,77% calc(100% - 5px),64% calc(100% - 1px),52% calc(100% - 4px),40% 100%,27% calc(100% - 5px),15% calc(100% - 1px),4% calc(100% - 4px),0 100%,3px 50%); }
+.jm-svg { display:block; width:100%; height:auto; }
+.l-jardin-cantero:hover .jm-svg { transform:translateY(-2px); transition:transform .3s; }
+@media (max-width:640px) {
+  .l-jardin { padding:24px; gap:28px; }
+  .l-jardin-img { flex-basis:100%; max-width:300px; margin:0 auto; }
+}
+@media (prefers-reduced-motion:reduce) { .l-jardin-img, .l-jardin-img:hover { transition:none; transform:none; } }
