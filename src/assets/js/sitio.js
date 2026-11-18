@@ -173,10 +173,14 @@
     e.preventDefault();
     elegir(+a.getAttribute("data-n"), false);
   });
-  girar.hidden = false;
-  girar.addEventListener("click", function () {
+  var alAzar = function () {
     var n;
     do { n = 1 + Math.floor(Math.random() * principios.length); } while (n === actual && principios.length > 1);
     elegir(n, true);
-  });
+  };
+  girar.hidden = false;
+  girar.addEventListener("click", alAzar);
+  var fondo = caja.querySelector(".rosa-fondo");
+  fondo.classList.add("se-puede-girar");
+  fondo.addEventListener("click", alAzar);
 })();

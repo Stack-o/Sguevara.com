@@ -915,3 +915,4 @@ a.lomo:hover .tapa, a.tapa:hover { transform: rotate(-1.2deg) translateY(-4px); 
   .arq-centro::after { animation-delay: 2.5s; }
 }
 @keyframes onda { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.45); opacity: 0; } }
+.rosa-fondo.se-puede-girar { cursor: pointer; }
