@@ -888,7 +888,7 @@ a.lomo:hover .tapa, a.tapa:hover { transform: rotate(-1.2deg) translateY(-4px); 
 .rosa { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); align-items: center; padding: clamp(22px, 3vw, 40px); border-top: 1px solid rgba(42, 26, 14, .2); }
 .rosa-esfera { position: relative; width: 100%; max-width: 400px; aspect-ratio: 1; justify-self: center; }
 .rosa-fondo { position: absolute; inset: 0; width: 100%; height: 100%; }
-.rosa-aguja { transform-box: view-box; transform-origin: 200px 200px; transition: transform 1.6s cubic-bezier(.2, .8, .2, 1); }
+.rosa-aguja { transform-box: view-box; transform-origin: 200px 200px; transition: transform 3.2s cubic-bezier(.2, .8, .2, 1); }
 .rosa-nodo { position: absolute; left: calc(50% + 42% * sin(var(--a))); top: calc(50% - 42% * cos(var(--a))); transform: translate(-50%, -50%);
   width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; text-decoration: none;
   font-family: var(--mono); font-size: 15px; font-weight: 600; color: #2A1A0E; background: #F3E3CB; border: 1.5px solid rgba(42, 26, 14, .45); transition: background .2s, color .2s, transform .2s; }
@@ -906,3 +906,12 @@ a.lomo:hover .tapa, a.tapa:hover { transform: rotate(-1.2deg) translateY(-4px); 
 .rosa-enlaces a { color: #7A2E05; }
 @media (max-width: 700px) { .rosa { grid-template-columns: 1fr; } .rosa-nodo { width: 34px; height: 34px; font-size: 13px; } }
 @media (prefers-reduced-motion: reduce) { .rosa-aguja { transition: none; } }
+
+/* Habitar: halo y ondas que se abren hacia afuera */
+.arq-centro { position: relative; isolation: isolate; box-shadow: 0 6px 18px var(--sombra), 0 0 0 10px color-mix(in srgb, var(--ocre) 14%, transparent), 0 0 46px color-mix(in srgb, var(--ocre) 30%, transparent); }
+.arq-centro::before, .arq-centro::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ocre) 60%, transparent); z-index: -1; pointer-events: none; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .arq-centro::before, .arq-centro::after { animation: onda 5s ease-out infinite; }
+  .arq-centro::after { animation-delay: 2.5s; }
+}
+@keyframes onda { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.45); opacity: 0; } }
