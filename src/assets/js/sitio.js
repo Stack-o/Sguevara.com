@@ -84,59 +84,6 @@
   }
 })();
 
-// ¿Sergio o no? — juego del inicio. Las frases viven en src/_data/juego.json
-(function () {
-  var caja = document.querySelector("[data-juego]");
-  var datos = document.getElementById("juego-datos");
-  if (!caja || !datos) return;
-  var preguntas = [];
-  try { preguntas = JSON.parse(datos.textContent); } catch (e) { return; }
-  if (!preguntas.length) return;
-  var $ = function (s) { return caja.querySelector(s); };
-  var i = 0, puntos = 0, respondida = false;
-  var mostrar = function () {
-    var q = preguntas[i];
-    $("[data-frase]").textContent = q.frase;
-    $("[data-progreso]").textContent = (i + 1) + " de " + preguntas.length;
-    $("[data-botones]").hidden = false;
-    $("[data-respuesta]").hidden = true;
-    respondida = false;
-  };
-  var elegir = function (esSergio) {
-    if (respondida) return;
-    respondida = true;
-    var q = preguntas[i];
-    var ok = esSergio === q.sergio;
-    if (ok) puntos++;
-    var r = $("[data-respuesta]");
-    r.classList.toggle("fallo", !ok);
-    $("[data-veredicto]").textContent = ok ? "Correcto." : "No.";
-    $("[data-explicacion]").textContent = (q.sergio ? "Eso sí es Sergio. " : "Eso no es Sergio. ") + q.porque;
-    $("[data-siguiente-pregunta]").textContent = i + 1 >= preguntas.length ? "Ver resultado →" : "Siguiente →";
-    $("[data-botones]").hidden = true;
-    r.hidden = false;
-    $("[data-siguiente-pregunta]").focus();
-  };
-  var terminar = function () {
-    var total = preguntas.length;
-    $("[data-jugando]").hidden = true;
-    $("[data-final]").hidden = false;
-    $("[data-puntaje]").textContent = "Acertaste " + puntos + " de " + total;
-    $("[data-mensaje]").textContent = puntos === total
-      ? "Distingues como yo. Ya tenemos de qué hablar."
-      : (puntos >= total - 1 ? "Ya ves el sistema detrás de las respuestas. Falta poco."
-      : "El sentido común te jugó en contra. Para eso existe Tanmayo.");
-  };
-  caja.addEventListener("click", function (e) {
-    var b = e.target.closest("button");
-    if (!b) return;
-    if (b.hasAttribute("data-elegir")) elegir(b.getAttribute("data-elegir") === "si");
-    else if (b.hasAttribute("data-siguiente-pregunta")) { i++; if (i >= preguntas.length) terminar(); else mostrar(); }
-    else if (b.hasAttribute("data-reiniciar")) { i = 0; puntos = 0; $("[data-final]").hidden = true; $("[data-jugando]").hidden = false; mostrar(); }
-  });
-  mostrar();
-})();
-
 // Página Tanmayo: palabras doradas que se abren
 (function () {
   document.querySelectorAll("[data-capitulo]").forEach(function (cap) {
@@ -152,4 +99,88 @@
       caja.hidden = false;
     });
   });
+})();
+
+// Inicio: el menú marca la sección que se está leyendo
+(function () {
+  var enlaces = Array.prototype.slice.call(document.querySelectorAll(".menu [data-seccion]"));
+  if (!enlaces.length || !("IntersectionObserver" in window)) return;
+  var secciones = enlaces.map(function (a) { return document.getElementById(a.getAttribute("data-seccion")); }).filter(Boolean);
+  if (!secciones.length) return;
+  var actual = null;
+  var marcar = function (id) {
+    actual = id;
+    enlaces.forEach(function (a) {
+      if (a.getAttribute("data-seccion") === id) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    });
+  };
+  var obs = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) marcar(e.target.id);
+      else if (e.target.id === actual) marcar(null);
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  secciones.forEach(function (s) { obs.observe(s); });
+})();
+
+// Inicio: arquitectura simple / extendida
+(function () {
+  var caja = document.querySelector("[data-arquitectura]");
+  if (!caja) return;
+  var botones = caja.querySelectorAll("[data-nivel-boton]");
+  var mostrar = function (nivel) {
+    botones.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-nivel-boton") === nivel ? "true" : "false"); });
+    caja.querySelectorAll("[data-nivel]").forEach(function (el) { el.hidden = el.getAttribute("data-nivel") !== nivel; });
+    caja.setAttribute("data-mostrando", nivel);
+  };
+  caja.querySelector(".niveles").hidden = false;
+  botones.forEach(function (b) { b.addEventListener("click", function () { mostrar(b.getAttribute("data-nivel-boton")); }); });
+  mostrar("1");
+})();
+
+// Inicio: el compás de los 20 principios
+(function () {
+  var caja = document.querySelector("[data-rosa]");
+  var datos = document.getElementById("principios-datos");
+  if (!caja || !datos) return;
+  var principios = JSON.parse(datos.textContent);
+  var aguja = caja.querySelector("[data-aguja]");
+  var panel = caja.querySelector("[data-principio]");
+  var guia = caja.querySelector(".rosa-guia");
+  var girar = caja.querySelector("[data-girar]");
+  var nota = caja.querySelector("[data-p-nota]");
+  var angulo = 0, actual = 0;
+  var elegir = function (n, vueltas) {
+    var p = principios.filter(function (x) { return x.n === n; })[0];
+    if (!p) return;
+    var destino = (n - 1) * 18;
+    angulo = angulo + (vueltas ? 720 : 0) + (((destino - angulo) % 360) + 360) % 360;
+    aguja.style.transform = "rotate(" + angulo + "deg)";
+    caja.querySelectorAll(".rosa-nodo").forEach(function (a) {
+      if (+a.getAttribute("data-n") === n) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+    caja.querySelector("[data-p-n]").textContent = n;
+    caja.querySelector("[data-p-titulo]").textContent = p.titulo;
+    caja.querySelector("[data-p-frase]").textContent = p.frase;
+    caja.querySelector("[data-p-libro]").href = "/compas-animico/libro/#p-" + n;
+    if (p.nota) { nota.href = p.nota; nota.hidden = false; } else { nota.hidden = true; }
+    guia.hidden = true; panel.hidden = false; actual = n;
+  };
+  caja.addEventListener("click", function (e) {
+    var a = e.target.closest(".rosa-nodo");
+    if (!a) return;
+    e.preventDefault();
+    elegir(+a.getAttribute("data-n"), false);
+  });
+  var alAzar = function () {
+    var n;
+    do { n = 1 + Math.floor(Math.random() * principios.length); } while (n === actual && principios.length > 1);
+    elegir(n, true);
+  };
+  girar.hidden = false;
+  girar.addEventListener("click", alAzar);
+  var fondo = caja.querySelector(".rosa-fondo");
+  fondo.classList.add("se-puede-girar");
+  fondo.addEventListener("click", alAzar);
 })();
