@@ -15,10 +15,11 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0B0B0C">
+  <meta name="theme-color" content="#EFE5D0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/atom+xml" title="Anotaciones — Sergio Guevara" href="/feed.xml">
-  <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/gloock-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body class="{{ claseCuerpo }}">
@@ -28,12 +29,14 @@
       {% set claseMarca = "marca-nav" %}{% include "marca.njk" %}
       <span>Sergio Guevara</span>
     </a>
+    {% set enInicio = page.url == "/" %}
+    {% set enArq = page.url == "/tanmayo/" %}
+    {% set enLibros = page.url.startsWith("/anotaciones") or page.url.startsWith("/compas-animico") %}
     <nav class="menu" aria-label="Principal">
-      <a href="/tanmayo/"{% if page.url == '/tanmayo/' %} aria-current="page"{% endif %}>tanmayo</a>
-      <a href="/anotaciones/"{% if page.url.startsWith('/anotaciones') %} aria-current="page"{% endif %}>anotaciones</a>
-      <a href="/compas-animico/"{% if page.url == '/compas-animico/' %} aria-current="page"{% endif %}>el Compás Anímico</a>
-      <a href="/lecturas/el-jardinero/">lecturas</a>
-      <a href="{{ site.linkedin }}">linkedin</a>
+      <a href="{{ '' if enInicio else '/' }}#distinguir" data-seccion="distinguir">Distinguir</a>
+      <a href="{{ '' if enInicio else '/' }}#arquitectura" data-seccion="arquitectura"{% if enArq %} aria-current="page"{% endif %}>Arquitectura</a>
+      <a href="{{ '' if enInicio else '/' }}#libros" data-seccion="libros"{% if enLibros %} aria-current="page"{% endif %}>Libros<span class="menu-largo"> y anotaciones</span></a>
+      <a class="menu-externo" href="{{ site.linkedin }}">LinkedIn</a>
     </nav>
   </header>
 
@@ -45,7 +48,7 @@
     {% if page.url != "/" %}<a class="volver-inicio" href="/">← Volver al inicio</a>{% endif %}
     <div class="pie-grande">
       {% set claseMarca = "marca-pie" %}{% include "marca.njk" %}
-      <a class="conversemos" href="{{ site.linkedin }}">Sigamos la conversación en LinkedIn <span class="c-sistemas">↗</span></a>
+      <a class="conversemos" href="{{ site.linkedin }}">Sigamos la conversación en LinkedIn <span class="c-tiempo">↗</span></a>
     </div>
     <div class="pie-linea">
       <span>{{ site.autor }} · sguevara.com</span>

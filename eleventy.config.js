@@ -11,6 +11,9 @@ export default function (eleventyConfig) {
   // Lecturas: El jardinero de Tagore (página autónoma) → /lecturas/el-jardinero/
   eleventyConfig.addPassthroughCopy({ "src/_lecturas-jardinero": "lecturas/el-jardinero" });
   eleventyConfig.ignores.add("src/_lecturas-jardinero/**");
+  // Lecturas: Cuentos de Zhuangzi (página autónoma, en proceso) → /lecturas/zhuangzi/
+  eleventyConfig.addPassthroughCopy({ "src/_lecturas-zhuangzi": "lecturas/zhuangzi" });
+  eleventyConfig.ignores.add("src/_lecturas-zhuangzi/**");
 
   // Feed RSS/Atom de Anotaciones → /feed.xml
   eleventyConfig.addPlugin(feedPlugin, {
