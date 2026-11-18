@@ -50,7 +50,6 @@ El número (N°05, N°06…), el tiempo de lectura, el feed RSS, el mapa del sit
 | Los 20 principios | `src/_data/principios.json` |
 | El libro interactivo del Compás (`/compas-animico/libro/`) | `src/_libro-compas/index.html` (página autónoma) e ilustraciones en `src/assets/img/compas/`. Se genera con `build_sitio.py` desde `projects/compas-animico-libro/fuente/` en AI-OS-SGG |
 | El jardinero de Tagore (`/lecturas/el-jardinero/`) | `src/_lecturas-jardinero/index.html` (página autónoma, collages SVG incrustados) y `src/assets/img/jardinero-og.jpg`. Se genera con `build_sitio.py` desde `projects/lecturas-tagore-jardinero/fuente/` en AI-OS-SGG |
-| Las frases del juego "¿Sergio o no?" | `src/_data/juego.json` (`sergio: true` o `false`) |
 | Preguntas y palabras doradas de la página Tanmayo | `src/_data/tanmayo.json` |
 | La nota que se resalta en el inicio | en la nota, `destacada: true` (el inicio muestra la más reciente + la destacada) |
 | La T con los tres puntos | `src/_includes/marca.njk` (si tienes el logo original en SVG, reemplaza los trazos ahí) |

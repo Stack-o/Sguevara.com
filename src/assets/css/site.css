@@ -589,7 +589,7 @@ body.en-tierra .bajar-flotante { background: rgba(42,26,14,.9); border-color: #2
 @keyframes prensar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 @media (prefers-reduced-motion: reduce) { .taller * { animation: none !important; } }
 
-/* Órbita también para la marca del juego */
+/* Órbita de los tres puntos */
 .marca-orbita .orbita, .marca-orbita .orbita-y { animation-timing-function: cubic-bezier(.37,0,.63,1); animation-iteration-count: infinite; animation-direction: alternate; }
 
 /* Página /tanmayo/ */
