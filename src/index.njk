@@ -21,7 +21,7 @@ claseCuerpo: landing
     <div class="papel rasgado">
       {% set claseMarca = "marca-portada" %}{% include "marca.njk" %}
     </div>
-    <span class="cinta">«Lo que no se nombra, no se puede ver»</span>
+    <span class="cinta">«Lo que no se nombra, tiende a confundir»</span>
     <span class="cinta cinta-folio">f. 1 · Tanmayo</span>
   </figure>
 </section>
@@ -31,7 +31,7 @@ claseCuerpo: landing
   <div class="c-folio-cabeza">
     <div>
       <p class="folio">f. 2 · Formas de distinguir</p>
-      <h2 id="t-distinguir">Todo empieza por distinguir</h2>
+      <h2 id="t-distinguir">Las posibilidades se multiplican al distinguir</h2>
       <p class="c-lede">Las distinciones son la puerta de entrada. Se sostienen sobre dos maneras de mirar: el sistema y la propensión.</p>
     </div>
     <p class="nota-margen"><b>Cómo leerla</b>Una pirámide pequeña, de piedra apilada: la de arriba solo se sostiene si las de abajo están.</p>
@@ -90,7 +90,7 @@ claseCuerpo: landing
     </div>
     <p class="arq-pie"><span data-nivel="1">Nivel 1 · tres preguntas</span><span data-nivel="2" hidden>Nivel 2 · extendido: el mapa completo</span></p>
   </div>
-  <a class="seguir" href="/tanmayo/">Recorrer la arquitectura completa →</a>
+  <a class="seguir" href="/tanmayo/">Recorrer la arquitectura extendida →</a>
 </section>
 
 <!-- f. 4 · Libros y anotaciones -->
@@ -99,7 +99,7 @@ claseCuerpo: landing
     <div>
       <p class="folio">f. 4 · Libros y anotaciones</p>
       <h2 id="t-libros">Lo que voy escribiendo y leyendo</h2>
-      <p class="c-lede">Un libro propio, dos lecturas anotadas y las notas sueltas del cuaderno.</p>
+      <p class="c-lede">El Compás Anímico, Lecturas anotadas y Notas sueltas de varios lugares.</p>
     </div>
     <p class="nota-margen"><b>En la mesa</b>Zhuangzi todavía tiene la tinta fresca.</p>
   </div>
@@ -113,8 +113,34 @@ claseCuerpo: landing
       <p>20 principios. Tienen números, pero no un orden: solo la dirección que tu compás elija.</p>
       <div class="botones">
         <a class="boton boton-tinta" href="/compas-animico/">Explorar los 20 principios</a>
-        <a class="boton boton-borde" href="{{ site.libroEnlace }}">Conseguir el libro ↗</a>
       </div>
+    </div>
+    <div class="rosa" data-rosa>
+      <div class="rosa-esfera">
+        <svg class="rosa-fondo" viewBox="0 0 400 400" aria-hidden="true">
+          <circle cx="200" cy="200" r="168" fill="none" stroke="#2A1A0E" stroke-opacity=".35" stroke-width="1"/>
+          <circle cx="200" cy="200" r="120" fill="none" stroke="#2A1A0E" stroke-opacity=".25" stroke-dasharray="2 6"/>
+          <g class="rosa-aguja" data-aguja>
+            <path d="M200 92 L212 200 L200 308 L188 200 Z" fill="#7A2E05"/>
+            <path d="M200 200 L212 200 L200 308 L188 200 Z" fill="#F3E3CB"/>
+            <circle cx="200" cy="200" r="7" fill="#2A1A0E"/>
+          </g>
+        </svg>
+        {% for p in principios %}
+        <a class="rosa-nodo" href="/compas-animico/libro/#p-{{ p.n }}" data-n="{{ p.n }}" style="--a: {{ (p.n - 1) * 18 }}deg" aria-label="Principio {{ p.n }}: {{ p.titulo }}">{{ p.n }}</a>
+        {% endfor %}
+      </div>
+      <div class="rosa-lectura">
+        <p class="rosa-guia">Déjate guiar por el número que más resuene contigo, o gira el compás.</p>
+        <button type="button" class="boton boton-tinta" data-girar hidden>Girar el compás</button>
+        <div class="rosa-principio" data-principio aria-live="polite" hidden>
+          <span class="rosa-num" data-p-n></span>
+          <h4 data-p-titulo></h4>
+          <p class="cursiva" data-p-frase></p>
+          <div class="rosa-enlaces"><a data-p-libro href="/compas-animico/libro/">Leer en el libro →</a><a data-p-nota href="#" hidden>Leer la nota →</a></div>
+        </div>
+      </div>
+      <script type="application/json" id="principios-datos">{{ principios | dump | safe }}</script>
     </div>
   </article>
 

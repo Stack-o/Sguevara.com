@@ -138,3 +138,45 @@
   botones.forEach(function (b) { b.addEventListener("click", function () { mostrar(b.getAttribute("data-nivel-boton")); }); });
   mostrar("1");
 })();
+
+// Inicio: el compás de los 20 principios
+(function () {
+  var caja = document.querySelector("[data-rosa]");
+  var datos = document.getElementById("principios-datos");
+  if (!caja || !datos) return;
+  var principios = JSON.parse(datos.textContent);
+  var aguja = caja.querySelector("[data-aguja]");
+  var panel = caja.querySelector("[data-principio]");
+  var guia = caja.querySelector(".rosa-guia");
+  var girar = caja.querySelector("[data-girar]");
+  var nota = caja.querySelector("[data-p-nota]");
+  var angulo = 0, actual = 0;
+  var elegir = function (n, vueltas) {
+    var p = principios.filter(function (x) { return x.n === n; })[0];
+    if (!p) return;
+    var destino = (n - 1) * 18;
+    angulo = angulo + (vueltas ? 720 : 0) + (((destino - angulo) % 360) + 360) % 360;
+    aguja.style.transform = "rotate(" + angulo + "deg)";
+    caja.querySelectorAll(".rosa-nodo").forEach(function (a) {
+      if (+a.getAttribute("data-n") === n) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+    caja.querySelector("[data-p-n]").textContent = n;
+    caja.querySelector("[data-p-titulo]").textContent = p.titulo;
+    caja.querySelector("[data-p-frase]").textContent = p.frase;
+    caja.querySelector("[data-p-libro]").href = "/compas-animico/libro/#p-" + n;
+    if (p.nota) { nota.href = p.nota; nota.hidden = false; } else { nota.hidden = true; }
+    guia.hidden = true; panel.hidden = false; actual = n;
+  };
+  caja.addEventListener("click", function (e) {
+    var a = e.target.closest(".rosa-nodo");
+    if (!a) return;
+    e.preventDefault();
+    elegir(+a.getAttribute("data-n"), false);
+  });
+  girar.hidden = false;
+  girar.addEventListener("click", function () {
+    var n;
+    do { n = 1 + Math.floor(Math.random() * principios.length); } while (n === actual && principios.length > 1);
+    elegir(n, true);
+  });
+})();
