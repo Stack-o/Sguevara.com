@@ -151,7 +151,7 @@ claseCuerpo: landing
         {% endif %}
       </a>
       <span class="sello sello-listo">Anotaciones · {{ collections.anotaciones.length }} entradas</span>
-      <a class="lomo-titulo" href="/anotaciones/">Anotaciones</a>
+      <span class="lomo-titulo">Anotaciones</span>
       <ul class="lomo-lista">
         {% for n in collections.anotaciones | recientes(3) %}
         <li class="tema-{{ n.data.tema | slugTema }}"><a href="{{ n.url }}"><span class="punto-tema" aria-hidden="true"></span>{{ n.data.title }}</a></li>

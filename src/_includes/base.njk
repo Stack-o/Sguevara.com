@@ -34,8 +34,8 @@
     {% set enLibros = page.url.startsWith("/anotaciones") or page.url.startsWith("/compas-animico") %}
     <nav class="menu" aria-label="Principal">
       <a href="{{ '' if enInicio else '/' }}#distinguir" data-seccion="distinguir">Distinguir</a>
-      <a href="{{ '' if enInicio else '/' }}#arquitectura" data-seccion="arquitectura"{% if enArq %} aria-current="page"{% endif %}>Arquitectura</a>
-      <a href="{{ '' if enInicio else '/' }}#libros" data-seccion="libros"{% if enLibros %} aria-current="page"{% endif %}>Libros<span class="menu-largo"> y anotaciones</span></a>
+      <a href="{{ '' if enInicio else '/' }}#arquitectura" data-seccion="arquitectura"{% if enArq %} aria-current="true"{% endif %}>Arquitectura</a>
+      <a href="{{ '' if enInicio else '/' }}#libros" data-seccion="libros"{% if enLibros %} aria-current="true"{% endif %}>Libros<span class="menu-largo"> y anotaciones</span></a>
       <a class="menu-externo" href="{{ site.linkedin }}">LinkedIn</a>
     </nav>
   </header>

@@ -37,7 +37,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ser: #E26B56; --tiempo: #E3A64C; --sistemas: #6FA9A6; --ocre: #D9A055; --musgo: #93AE72;
+    --ser: #E5735E; --tiempo: #E3A64C; --sistemas: #6FA9A6; --ocre: #D9A055; --musgo: #93AE72;
     --fondo: #191612; --papel-2: #242019; --recorte: #2E2820;
     --texto: #EDE3CF; --texto-2: #DCD0BA; --suave: #C2B59F; --apagado: #A99C88;
     --linea: #3B3329; --linea-2: #574B3C; --sombra: rgba(0, 0, 0, .45);
@@ -47,6 +47,7 @@
 
 /* Página del libro: clima tierra */
 body.tierra {
+  --tiempo: #7A2E05; --ser: #8E2A1F; --sistemas: #1F4F51; --ocre: #C8902C;
   --fondo: #E7C08A;
   --texto: #2A1A0E;
   --texto-2: #3A2414;
@@ -780,6 +781,7 @@ html { scroll-padding-top: 76px; }
 .piedra p { margin: 0; font-size: 16.5px; line-height: 1.5; color: var(--texto-2); }
 .piedra p strong { font-weight: 500; color: var(--texto); }
 .piedra-cima { grid-column: 1 / -1; width: 64%; justify-self: center; background: var(--ocre); color: #221E1A; }
+.piedra-base .piedra-rol { color: var(--suave); }
 .piedra-cima .piedra-rol, .piedra-cima p { color: #3A2A14; }
 .piedra-cima p strong, .piedra-cima h3 { color: #221E1A; }
 .piedra-base.tema-sistemas { background: color-mix(in srgb, var(--sistemas) 15%, var(--papel-2)); }
@@ -874,7 +876,7 @@ a.lomo:hover .tapa, a.tapa:hover { transform: rotate(-1.2deg) translateY(-4px); 
   .cabecera { gap: 4px 12px; padding-top: 8px; padding-bottom: 8px; }
   .logo span, .menu .menu-largo, .menu .menu-externo { display: none; }
   .menu { gap: 0; }
-  .menu a { font-size: 14px; padding: 10px 8px; }
+  .menu a { font-size: 14px; padding: 11px 8px; }
   .piramide { grid-template-columns: 1fr; }
   .estante { grid-template-columns: 1fr; }
   .c-portada { padding-top: 28px; }
